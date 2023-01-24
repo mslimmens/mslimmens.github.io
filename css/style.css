@@ -1,0 +1,102 @@
+body {
+    background: #212f3d;
+}
+
+main {
+    padding-top: 10px;
+}
+
+p {
+    font-size: small;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar-light .navbar-toggler {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.navbar-collapse {
+    flex-grow: 0;
+}
+
+.icon {
+    margin: 0 10px 0 10px;
+}
+
+.list-group-item {
+    background: #212f3d;
+    color: #f8f9fa;
+    padding: 0.2rem 1rem;
+    font-size: small;
+}
+
+.img-centro {
+    float: right;
+}
+
+.card {
+    background-color: #212f3d;
+}
+
+#myBtn {
+    width: 100px;
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Fixed/sticky position */
+    bottom: 20px;
+    /* Place the button at the bottom of the page */
+    right: 30px;
+    /* Place the button 30px from the right */
+    z-index: 99;
+    /* Make sure it does not overlap */
+    border: none;
+    /* Remove borders */
+    outline: none;
+    /* Remove outline */
+    background-color: #f8f9fa;
+    /* Set a background color */
+    color: #212f3d;
+    /* Text color */
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    padding: 2px;
+    /* Some padding */
+    border-radius: 5px;
+    /* Rounded corners */
+    font-size: 18px;
+    /* Increase font size */
+    width: auto;
+}
+
+#myBtn:hover {
+    background-color: #212f3d;
+    color: #f8f9fa;
+    /* Add a dark-grey background on hover */
+}
+
+@media (max-width: 768px) {
+
+    .row-tel {
+        padding-top: 20px;
+    }
+
+    .btn {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .img-centro {
+        margin-right: auto;
+        margin-left: auto;
+        display: block;
+        float: none;
+    }
+
+}
