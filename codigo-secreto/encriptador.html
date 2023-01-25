@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Código Secreto</title>
+    <link rel="icon" href="img/unlock.svg">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/codigosecreto.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div>
+                <a class="navbar-brand text-light" href="../index.html">Home</a>
+                <a class="navbar-brand text-light" data-bs-toggle="modal" data-bs-target="#mi-modal" href="">Contacto</a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <!-- Dropdown -->
+                    <li class="nav-item dropstart">
+                        <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" id="dropstart" data-bs-toggle="dropdown"
+                            aria-expanded="false">Proyectos</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropstart">
+                            <li><a href="encriptador.html" class="dropdown-item">Código Secreto</a></li>
+                            <!--<li><a href="#" class="dropdown-item">Elemento 2</a></li>
+                            <li><a href="#" class="dropdown-item">Elemento 3</a></li>-->
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container mt-5">
+            <!-- Título y descripción-->
+            <div class="row">
+                <div class="col-12 text-center text-light">
+                    <h1 class="mb-3">Código Secreto</h1>
+                    <p>Para encriptar el mensaje solo debe ingresar el texto y dar click en encriptar!.</p>
+                    <p>El mismo mensaje se puede desencriptar copiando desde el segundo cuadro y copiando en el primero,
+                        posteriormente hacer click en desencriptar! para ver el mensaje.</p>
+                </div>
+            </div>
+
+            <!-- Cuadros de Input -->
+            <div class="row mt-4">
+                <!-- Primer Cuadro: Encriptador -->
+                <div class="col-12 col-md-6 encriptador">
+                    <div class="card">
+                        <div class="card-header">
+                            Solo letras minúsculas, sin acentos.
+                        </div>
+                        <div class="card-body">
+                            <input class="text-input" type="text" name="input-texto" id="input-texto"
+                                placeholder="Ingrese el texto aqui">
+                            <input class="btn btn-primary" type="submit" value="encriptar!" id="btn-encriptar">
+                            <input class="btn btn-danger" type="submit" value="desencriptar!" id="btn-desencriptar">
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-info">Cuadro 1</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 encriptador">
+                    <div class="card">
+                        <div class="card-header">
+                            Mensaje encriptada:
+                        </div>
+                        <div class="card-body">
+                            <input class="text-input" type="text" id="msg"></input>
+                            <input class="btn btn-success" type="submit" value="copiar" id="btn-copy">
+                        </div>
+                        <div class="card-footer">
+                            <span class="badge bg-info">Cuadro 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><svg width="2em" height="2em" viewBox="0 0 16 16"
+                class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 11.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+            </svg>
+        </button>
+    </main>
+    <footer>
+        <div class="container text-light">
+            <div class="row mt-2 mb-4">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="icon">
+                        <a class="icon" href="https://github.com/mslimmens?tab=repositories" target="_blank"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="35" height="35">
+                                <path
+                                    d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z">
+                                </path>
+                            </svg></a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.linkedin.com/in/matias-nahuel-slimmens-ab9127ab/" target="_blank"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="35" height="35">
+                                <path
+                                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- modal -->
+    <div class="modal fade" id="mi-modal" tabindex="-1" aria-hidden="true" aria-labelledby="label-modal-2"
+        data-bs-backdrop="static">
+        <!-- Caja de dialogo -->
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <!-- contenido de la caja-->
+            <div class="modal-content">
+
+                <!-- Encabezado de la caja -->
+                <div class="modal-header">
+                    <h5 class="modal-tittle">Contactame</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <form class="mt-3 modal-body" action="" id="contacto">
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo Eléctronico - En Prueba</label>
+                        <input type="text" class="form-control" id="correo" aria-describedby="ayuda-correo">
+                        <div id="ayuda-correo" class="form-text">
+                            Me pondre en contacto con usted
+                        </div>
+                    </div>
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <div class="mb-3">
+                        <textarea class="form-control" name="mensaje" id="mensaje"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/cod.js"></script>
+    <script src="js/codigosecreto.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
