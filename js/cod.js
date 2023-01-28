@@ -33,7 +33,7 @@ form.addEventListener('submit', e => {
         console.log(res);
         if(res.status === 200){
             form.reset();
-            alert('Datos registrados correctmamente');
+            alert('Mensaje Enviado Correctamente');
         }
     })
     .catch((error) => {
