@@ -17,3 +17,26 @@ function topFunction() {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
+
+
+// codigo form
+let scripURL = 'https://script.google.com/macros/s/AKfycbzWIX65tAo1OUdgK_909PwlCtjPwkDeAeOGtw05CwB--NIbS-bn7jbsyrJDLtedPtaY/exec';
+let form = document.forms['submit-form'];
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(scripURL, {
+        method: 'POST',
+        body: new FormData(form)
+    })
+    .then((res) => {
+        console.log(res);
+        if(res.status === 200){
+            form.reset();
+            alert('Datos registrados correctmamente');
+        }
+    })
+    .catch((error) => {
+        console.error('Error', error.message)
+    });
+});
