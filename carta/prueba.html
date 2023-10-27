@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formas Geométricas Aleatorias</title>
+    <style>
+        .cuadrado {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .triangulo {
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 87px solid green;
+        }
+
+        .circulo {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Forma Geométrica Aleatoria</h1>
+    <div id="forma"></div>
+    
+    <script>
+        // Array de nombres de clases para las formas
+        var formas = ["cuadrado", "triangulo", "circulo"];
+
+        // Generar un número aleatorio entre 0 y 2 para seleccionar una forma al azar
+        var indiceAleatorio = Math.floor(Math.random() * 3);
+
+        // Obtener el elemento donde se mostrará la forma
+        var forma = document.getElementById("forma");
+
+        // Agregar la clase correspondiente a la forma seleccionada
+        forma.classList.add(formas[indiceAleatorio]);
+    </script>
+</body>
+</html>
 
