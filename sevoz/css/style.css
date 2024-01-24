@@ -1,1 +1,536 @@
 
+@import url("https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&amp;display=swap");
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  background-color: black;
+  color: #7219c6;
+}
+
+a {
+  display: block;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none;
+  color: #FFE0FD;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.d-table {
+  width: 100%;
+  height: 100%;
+}
+
+.d-table-cell {
+  vertical-align: middle;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  color: #7219c6;
+}
+
+.card h5{
+  color: black;
+  font-size: 0px;
+}
+
+.card{
+  background-color: #7219c6;
+  height: 570px;
+}
+.card-text{
+  height: 200px;
+}
+.btn-primary p{
+  font-size: 0%;
+}
+svg {
+  overflow: hidden;
+  vertical-align: middle;
+  color: #7219c6;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+  color: #FFE0FD;
+  font-size: 16px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.inicio {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inicio img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.8s ease-in-out;
+}
+
+/*btn-primary*/
+.btn {
+  border: none;
+  padding: 11px 32px;
+  line-height: initial;
+  border-radius: 5px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn.disabled, .btn:disabled {
+  opacity: 1;
+}
+
+.btn-primary {
+  color: #7219c6;
+  background-color: black;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: black;
+  color: #000000;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background-color: black;
+  color: #7219c6;
+}
+
+/*form-control */
+.form-control {
+  height: 35px;
+  padding: 0 0 15px;
+  font-size: 15px;
+  line-height: initial;
+  color: #7219c6;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #7219c6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #7219c6;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #7219c6;
+}
+
+.form-control::-ms-input-placeholder {
+  color: #7219c6;
+}
+
+.form-control::placeholder {
+  color: #7219c6;
+}
+
+.form-control:focus {
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  background-color: transparent;
+  color: #000000;
+  border-color: #000000;
+}
+
+/*================================================
+Preloader Area CSS
+=================================================*/
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 999999;
+  text-align: center;
+}
+
+.preloader .spinner {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 46%;
+  -webkit-transform: translateY(-46%);
+          transform: translateY(-46%);
+}
+
+.preloader .spinner .double-bounce1, .preloader .spinner .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ffffff;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+          animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.preloader .spinner .double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+/*================================================
+Navbar Area CSS
+=================================================*/
+
+.logo{
+  max-width: 100px;
+}
+
+.logo img{
+  max-width: 100%;
+}
+
+/* scroll */
+.navbar.navbar-style-two {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 9999;
+  padding-top: 20px;
+}
+
+.navbar.navbar-style-two.is-sticky{
+  position: fixed;
+  color: #ffffff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  -webkit-box-shadow: 0 2px 28px 0 #ffffff(0, 0, 0, 0.06);
+          box-shadow: 0 2px 28px 0 #ffffff(0, 0, 0, 0.06);
+  background-color: black !important;
+  -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+          animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  opacity: 0.9;
+}
+
+/* elementos */
+.navbar-light .navbar-nav {
+  margin-left: auto;
+}
+
+.navbar-light .navbar-nav .nav-item {
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link {
+  color: #000000;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 1.5px;
+  background: #000000;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.navbar-light .navbar-nav .nav-item .nav-link:hover::before, .navbar-light .navbar-nav .nav-item .nav-link.active::before {
+  width: 100%;
+  right: auto;
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.navbar-light .navbar-nav .nav-item:last-child {
+  padding-right: 0;
+}
+
+.navbar-light .navbar-nav .nav-item:first-child {
+  padding-left: 0;
+}
+
+.navbar-light.bg-dark-color .navbar-brand img:nth-child(2) {
+  display: none;
+}
+
+.navbar-light.bg-dark-color .navbar-nav .nav-item .nav-link {
+  color: #FFE0FD;
+}
+
+.navbar-light.bg-dark-color .navbar-nav .nav-item .nav-link::before {
+  background: #FFE0FD;
+}
+
+.navbar-light.bg-dark-color.is-sticky .navbar-nav .nav-item .nav-link {
+  color: #7219c6;
+  transform: scale(1.1);
+}
+
+.navbar-light.bg-dark-color.is-sticky .navbar-nav .nav-item .nav-link::before {
+  background: #7219c6;
+}
+
+.navbar-light.bg-dark-color.is-sticky .navbar-brand img:nth-child(1) {
+  display: none;
+}
+
+.navbar-light.bg-dark-color.is-sticky .navbar-brand img:nth-child(2) {
+  display: block;
+}
+
+.navbar-light.transparent-navbar .navbar-brand img:nth-child(2) {
+  display: none;
+}
+
+.navbar-light.transparent-navbar .navbar-nav .nav-item .nav-link {
+  color: #ffffff;
+}
+
+.navbar-light.transparent-navbar .navbar-nav .nav-item .nav-link::before {
+  background: #ffffff;
+}
+
+.navbar-light.transparent-navbar.is-sticky .navbar-nav .nav-item .nav-link {
+  color: #000000;
+}
+
+.navbar-light.transparent-navbar.is-sticky .navbar-nav .nav-item .nav-link::before {
+  background: #000000;
+}
+
+.navbar-light.transparent-navbar.is-sticky .navbar-brand img:nth-child(1) {
+  display: none;
+}
+
+.navbar-light.transparent-navbar.is-sticky .navbar-brand img:nth-child(2) {
+  display: block;
+}
+
+/*================================================
+Main Banner Area CSS
+=================================================*/
+
+/* Agrega estilos para los círculos y las imágenes */
+.redes-sociales {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.circulo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.circulo img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Añade estilos adicionales según tus preferencias */
+
+.main-banner {
+  margin-bottom: 60px;
+}
+
+.main-centrado-en-columna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main-banner-content h2{
+  padding-bottom: 20px;
+}
+/* Estilos para los círculos */
+.main-circulos-container {
+  display: flex;
+  justify-content: space-evenly; /* Alinea los círculos horizontalmente */
+  margin-top: 20px;
+}
+
+.main-container-circulo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #7219c6; /* Puedes cambiar este color según tu preferencia */
+  color: #FFE0FD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out
+}
+
+/* Efecto de escala al pasar el ratón */
+.main-container-circulo:hover {
+  transform: scale(1.1);
+  background-color: #FFE0FD;
+  color: #7219c6;
+}
+
+.main-container-circulo:hover a{
+  color: #7219c6;
+}
+
+.main-banner-content p {
+  color: #FFE0FD;
+}
+
+.main-banner-image {
+  max-width: 85%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  transition: transform 0.3s ease-in-out
+}
+
+/* Efecto de escala al pasar el ratón */
+.main-banner-image:hover {
+  transform: scale(1.1);
+}
+
+/*================================================
+Section jobs
+=================================================*/
+.jobs {
+  margin-bottom: 100px;
+}
+
+.jobs .container{
+  border-radius: 15px; /* Borde redondeado, puedes ajustar el valor según tu preferencia */
+  border: 2px solid #7219c6; /* Tamaño y color del borde */
+  padding: 25px; /* Margen interno */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out
+}
+
+.jobs .container:hover{
+  border-radius: 15px; /* Borde redondeado, puedes ajustar el valor según tu preferencia */
+  border: 2px solid #7219c6; /* Tamaño y color del borde */
+  padding: 25px; /* Margen interno */
+  background-color: #7219c6;
+}
+
+.jobs .container h2, h3{
+  color: #FFE0FD; /* Cambiar el color del h2 al estar en hover */
+}
+
+.jobs .container:hover h2, h3{
+  color: #FFE0FD; /* Cambiar el color del h2 al estar en hover */
+}
+
+.jobs .container .carousel-item {
+  background-color: black;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, background-color 0.3s ease-in-out
+}
+
+.carousel-item iframe {
+  border-radius: 20px;
+}
+
+.jobs .container:hover .carousel-item {
+  background-color: #7219c6; /* Cambiar el color del h2 al estar en hover */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0); /* Fondo negro semi-transparente */
+  color: white; /* Texto blanco */
+  top: 330px;
+  border-radius: 5px;
+}
+
+.carousel-control-prev {
+  left: 150px;
+}
+
+.carousel-control-next {
+  right: 150px;
+}
