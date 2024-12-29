@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const diasDeLaSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+            const hoy = new Date();
+            const diaActual = diasDeLaSemana[hoy.getDay()];
+            document.getElementById('titulo').innerHTML = `Hola Maga y Maty, hoy es ${diaActual}`;
+        });
+    </script>
+</head>
+<body>
+    <div class="container mt-4">
+        <header class="text-center mb-4">
+            <h1 id="titulo"></h1>
+        </header>
+        <main class="row">
+            <section class="col-md-6">
+                <h2>Agenda de la semana 1</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Desayuno</th>
+                            <th>Almuerzo</th>
+                            <th>Merienda</th>
+                            <th>Cena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Martes</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- Añade más filas para los demás días de la semana -->
+                    </tbody>
+                </table>
+            </section>
+            <section class="col-md-6">
+                <h2>Agenda de la semana 2</h2>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Desayuno</th>
+                            <th>Almuerzo</th>
+                            <th>Merienda</th>
+                            <th>Cena</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lunes</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Martes</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <!-- Añade más filas para los demás días de la semana -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
