@@ -240,6 +240,54 @@ p {
     border: 0;
 }
 
+/* Estilos para la sección del mapa */
+#como-llegar {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#como-llegar h2 {
+    color: #5d4a67; /* Un color bonito para el título */
+    margin-bottom: 20px;
+}
+
+.mapa-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho) */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin: 0 auto; /* Centrar el contenedor del mapa */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+.mapa-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.mapa-info {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.mapa-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.mapa-info a:hover {
+    text-decoration: underline;
+}
+
 /* --- Tu CSS para la galería de imágenes y la sección principal --- */
 
 #upload-photos {
