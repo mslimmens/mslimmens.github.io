@@ -74,6 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const openUploadModalBtn2 = document.getElementById('openUploadModalBtn2');
+
+    if (openUploadModalBtn2) {
+        openUploadModalBtn2.addEventListener('click', function() {
+            // Abre una nueva ventana o pestaña a la URL especificada
+            window.open('https://mega.nz/filerequest/nzQT3zwEWKQ', '_blank');
+        });
+    }
+
     
 
     // --- Otros scripts que puedas tener ---
