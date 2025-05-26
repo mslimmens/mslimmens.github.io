@@ -358,6 +358,29 @@ p {
     /* Animación de aparición */
 }
 
+#openUploadModalBtn2 {
+    position: fixed; /* Esto lo fija a la ventana del navegador */
+    bottom: 20px;    /* 20px desde el borde inferior de la ventana */
+    right: 20px;     /* 20px desde el borde derecho de la ventana */
+    z-index: 1000;   /* Asegura que esté por encima de la mayoría de los otros elementos */
+
+    /* Estilos adicionales para que se vea bien como un botón flotante */
+    background-color: #007bff; /* Color azul, puedes cambiarlo */
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 30px; /* Bordes muy redondeados (píldora) */
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para que "flote" */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+#openUploadModalBtn2:hover {
+    background-color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto de "elevación" */
+}
+
 .modal-content {
     background-color: #fefefe;
     margin: 10% auto;
