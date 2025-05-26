@@ -64,48 +64,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // --- Lógica del Modal de Subida de Fotos y Videos ---
+    // --- Lógica del Botón para Abrir Nueva Ventana ---
     const openUploadModalBtn = document.getElementById('openUploadModalBtn');
-    const megaUploadModal = document.getElementById('megaUploadModal');
-    const closeButton = document.querySelector('.modal .close-button'); // Asegura que se selecciona el botón de cerrar del modal
 
-    // Función para abrir el modal
-    function openModal() {
-        if (megaUploadModal) {
-            megaUploadModal.style.display = 'block';
-            body.style.overflow = 'hidden'; // Evita el scroll en el body cuando el modal está abierto
-        }
-    }
-
-    // Función para cerrar el modal
-    function closeModal() {
-        if (megaUploadModal) {
-            megaUploadModal.style.display = 'none';
-            body.style.overflow = 'auto'; // Restaura el scroll en el body
-        }
-    }
-
-    // Event listeners para el modal
-    if (openUploadModalBtn && megaUploadModal && closeButton) {
-        // Abrir modal al hacer clic en el botón "Subir Fotos y Videos"
-        openUploadModalBtn.addEventListener('click', openModal);
-
-        // Cerrar modal al hacer clic en la 'x'
-        closeButton.addEventListener('click', closeModal);
-
-        // Cerrar modal al hacer clic fuera del contenido del modal
-        window.addEventListener('click', function(event) {
-            if (event.target === megaUploadModal) {
-                closeModal();
-            }
-        });
-
-        // Cerrar modal al presionar la tecla ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
+    if (openUploadModalBtn) {
+        openUploadModalBtn.addEventListener('click', function() {
+            // Abre una nueva ventana o pestaña a la URL especificada
+            window.open('https://mega.nz/filerequest/nzQT3zwEWKQ', '_blank');
         });
     }
+
+    
 
     // --- Otros scripts que puedas tener ---
     console.log('La lógica principal de la página del casamiento ha sido inicializada.');
