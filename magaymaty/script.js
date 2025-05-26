@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const pantallaCarga = document.getElementById('pantalla-carga');
+    const body = document.body;
+
+    // Añade una clase para iniciar la transición de ocultado
+    pantallaCarga.classList.add('oculto');
+
+    // Elimina el elemento de la pantalla de carga del DOM después de la transición
+    pantallaCarga.addEventListener('transitionend', function() {
+        pantallaCarga.style.display = 'none'; // Asegúrate de que no ocupe espacio
+        body.classList.add('cargado'); // Restaura el scrollbar del body
+    }, { once: true }); // El { once: true } asegura que el evento se dispare solo una vez
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     console.log('La página del casamiento ha cargado completamente.');
 
     // Ejemplo: Si tuvieras enlaces de navegación que quieres que se desplacen suavemente
