@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Nos Casamos! Maga & Maty</title>
+    <meta name="description" content="Estamos muy emocionados de compartir con ustedes este día tan especial. Aquí encontrarán toda la
+                información necesaria para acompañarnos." />
+    <meta property="og:image" content="images/pareja-de-boda.png" />
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/x-icon" href="images/pareja-de-boda.png">
+    <link rel="shortcut icon" href="images/pareja-de-boda.png">
 
 </head>
+
 <body>
     <header>
         <h1 style="opacity: 0;">¡Nos Casamos!</h1>
@@ -18,7 +24,8 @@
     <main>
         <section id="welcome">
             <h3>¡Bienvenidos a nuestra celebración!</h3>
-            <p>Estamos muy emocionados de compartir con ustedes este día tan especial. Aquí encontrarán toda la información necesaria para acompañarnos.</p>
+            <p>Estamos muy emocionados de compartir con ustedes este día tan especial. Aquí encontrarán toda la
+                información necesaria para acompañarnos.</p>
         </section>
 
         <section id="gallery">
@@ -45,7 +52,9 @@
                     <p>Int. Juan Irigoin 4440, San Miguel</p>
                     <p>12:00 hrs</p>
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.7523555239556!2d-58.718012623359555!3d-34.54227097368551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd38e7894a47%3A0xc47e33e46c7d2427!2sInt.%20Juan%20Irigoin%204440%2C%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1716603507011!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.7523555239556!2d-58.718012623359555!3d-34.54227097368551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcbd38e7894a47%3A0xc47e33e46c7d2427!2sInt.%20Juan%20Irigoin%204440%2C%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1716603507011!5m2!1ses-419!2sar"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
                 <div class="detail-block">
@@ -53,7 +62,9 @@
                     <p>Av. Int. Remigio López 1886, San Miguel</p>
                     <p>Post Ceremonia Civil</p>
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.0838385077227!2d-58.71690182335882!3d-34.558778873733075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0c007172b09%3A0x6b8d9633e6c0c27e!2sAv.%20Int.%20Remigio%20L%C3%B3pez%201886%2C%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1716603572851!5m2!1ses-419!2sar" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3288.0838385077227!2d-58.71690182335882!3d-34.558778873733075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb0c007172b09%3A0x6b8d9633e6c0c27e!2sAv.%20Int.%20Remigio%20L%C3%B3pez%201886%2C%20San%20Miguel%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1716603572851!5m2!1ses-419!2sar"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -62,19 +73,42 @@
         <section id="upload-photos">
             <h3>¡Comparte tus Fotos!</h3>
             <p>Nos encantaría ver este día a través de tus ojos. Sube tus fotos y videos del evento aquí:</p>
-            <div class="mega-upload-container">
-                <iframe width="400" height="100" frameborder="0" src="https://mega.nz/filerequest#!nzQT3zwEWKQ!d!es" allowfullscreen></iframe>
-            </div>
+
+            <button id="openUploadModalBtn" class="action-button">Subir Fotos y Videos</button>
+
             <p>¡Gracias por capturar estos momentos con nosotros!</p>
         </section>
 
+        <div id="megaUploadModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h4>Sube tus recuerdos aquí</h4>
+                <div class="mega-upload-container-modal">
+                    <iframe width="400" height="100" frameborder="0" src="https://mega.nz/filerequest#!nzQT3zwEWKQ!d!es"
+                        allowfullscreen></iframe>
+                </div>
+                <p class="modal-info">Asegúrate de que tus fotos y videos estén relacionados con el evento.</p>
+            </div>
+        </div>
+
         <section id="contact">
             <h3>¿Necesitas Ayuda o Información Adicional?</h3>
-            <p>No dudes en contactarnos:</p>
-            <ul>
-                <li><strong>Maga:</strong> <a href="tel:+541166086090">1166086090</a></li>
-                <li><strong>Maty:</strong> <a href="tel:+541131339282">1131339282</a></li>
+            <p>No dudes en contactarnos directamente por WhatsApp:</p>
+            <ul class="contact-list">
+                <li>
+                    <a href="https://wa.me/5491166086090" target="_blank" class="whatsapp-link">
+                        <img src="images/wt.png" alt="WhatsApp logo" class="whatsapp-icon">
+                        <strong>Maga:</strong> 1166086090
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.me/5491131339282" target="_blank" class="whatsapp-link">
+                        <img src="images/wt.png" alt="WhatsApp logo" class="whatsapp-icon">
+                        <strong>Maty:</strong> 1131339282
+                    </a>
+                </li>
             </ul>
+            <p>¡Te esperamos para resolver cualquier consulta!</p>
         </section>
     </main>
 
@@ -84,4 +118,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
