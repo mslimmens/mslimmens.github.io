@@ -16,13 +16,16 @@ header {
     background-color: #8B0000;
 
     color: white;
-    padding: 60px 20px; /* Mantendremos este padding base */
+    padding: 60px 20px;
+    /* Mantendremos este padding base */
     text-align: center;
-    position: relative; /* IMPORTANTE: Esto es crucial para que el posicionamiento absoluto de .date funcione */
+    position: relative;
+    /* IMPORTANTE: Esto es crucial para que el posicionamiento absoluto de .date funcione */
     z-index: 1;
 
     /* Añadimos un padding-bottom mínimo para dejar espacio para la fecha */
-    padding-bottom: 80px; /* Ajusta este valor si necesitas más espacio debajo de la fecha */
+    padding-bottom: 80px;
+    /* Ajusta este valor si necesitas más espacio debajo de la fecha */
 }
 
 /* Opcional: Capa oscura superpuesta para mejorar la legibilidad del texto */
@@ -56,14 +59,21 @@ header .date {
     font-style: italic;
 
     /* **NUEVAS PROPIEDADES PARA POSICIONAMIENTO INFERIOR IZQUIERDA** */
-    position: absolute; /* Saca a .date del flujo normal del documento */
-    bottom: 20px; /* Lo posiciona a 20px del borde inferior del header */
-    left: 20px; /* Lo posiciona a 20px del borde izquierdo del header */
-    text-align: left; /* Alinea el texto a la izquierda */
-    width: auto; /* Permite que el ancho se ajuste al contenido, no al 100% */
-    transform: none; /* Quitamos la transformación que usábamos para centrar */
+    position: absolute;
+    /* Saca a .date del flujo normal del documento */
+    bottom: 20px;
+    /* Lo posiciona a 20px del borde inferior del header */
+    left: 20px;
+    /* Lo posiciona a 20px del borde izquierdo del header */
+    text-align: left;
+    /* Alinea el texto a la izquierda */
+    width: auto;
+    /* Permite que el ancho se ajuste al contenido, no al 100% */
+    transform: none;
+    /* Quitamos la transformación que usábamos para centrar */
 
-    z-index: 2; /* Asegura que esté por encima de la capa oscura */
+    z-index: 2;
+    /* Asegura que esté por encima de la capa oscura */
 }
 
 main {
@@ -72,7 +82,8 @@ main {
     margin: 20px auto;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; /* Pequeño redondeado para el main */
+    border-radius: 8px;
+    /* Pequeño redondeado para el main */
 }
 
 section {
@@ -106,26 +117,37 @@ p {
 }
 
 .image-item {
-    position: relative; /* Necesario para posicionar la imagen dentro */
-    width: 100%; /* El contenedor ocupa el 100% del ancho de su columna */
-    padding-bottom: 56.25%; /* ¡Esto crea la relación de aspecto 16:9! (9 / 16 = 0.5625) */
-    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del marco 16:9 */
-    border-radius: 8px; /* Aplicado al contenedor para que el radio de borde se vea */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+    position: relative;
+    /* Necesario para posicionar la imagen dentro */
+    width: 100%;
+    /* El contenedor ocupa el 100% del ancho de su columna */
+    padding-bottom: 56.25%;
+    /* ¡Esto crea la relación de aspecto 16:9! (9 / 16 = 0.5625) */
+    overflow: hidden;
+    /* Oculta cualquier parte de la imagen que se salga del marco 16:9 */
+    border-radius: 8px;
+    /* Aplicado al contenedor para que el radio de borde se vea */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para el contenedor */
 }
 
 .image-item img {
-    position: absolute; /* Permite posicionar la imagen dentro de .image-item */
+    position: absolute;
+    /* Permite posicionar la imagen dentro de .image-item */
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* La imagen llenará el contenedor 16:9 */
-    object-fit: cover; /* La imagen cubrirá el espacio manteniendo su proporción, recortándose si es necesario */
+    height: 100%;
+    /* La imagen llenará el contenedor 16:9 */
+    object-fit: cover;
+    /* La imagen cubrirá el espacio manteniendo su proporción, recortándose si es necesario */
     /* Aquí quitamos el border-radius y box-shadow para que se apliquen al contenedor .image-item */
-    transition: transform 0.3s ease; /* Transición para el hover */
+    transition: transform 0.3s ease;
+    /* Transición para el hover */
 }
 
-.image-item:hover img { /* Aplicamos el hover al img dentro del item */
+.image-item:hover img {
+    /* Aplicamos el hover al img dentro del item */
     transform: scale(1.05);
 }
 
@@ -133,7 +155,8 @@ p {
 
 /* **Para mover la segunda imagen un poco hacia abajo** */
 .image-grid .image-item:nth-child(2) img {
-    object-position: 50% 5%; /* Ajusta la posición vertical de la segunda imagen.
+    object-position: 50% 5%;
+    /* Ajusta la posición vertical de la segunda imagen.
                                  El primer valor (50%) es horizontal (centrado).
                                  El segundo valor (60%) es vertical: 0% es arriba, 100% es abajo.
                                  Puedes cambiar 60% por un valor mayor para moverla más abajo,
@@ -153,7 +176,8 @@ p {
 .detail-block {
     flex: 1;
     min-width: 280px;
-    max-width: 45%; /* Para que en pantallas grandes haya dos columnas */
+    max-width: 45%;
+    /* Para que en pantallas grandes haya dos columnas */
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -169,7 +193,8 @@ p {
 /* Contenedor de Mapas Responsive */
 .map-container {
     position: relative;
-    padding-bottom: 75%; /* Proporción de aspecto 4:3 (altura / anchura * 100). Puedes ajustar esto */
+    padding-bottom: 75%;
+    /* Proporción de aspecto 4:3 (altura / anchura * 100). Puedes ajustar esto */
     height: 0;
     overflow: hidden;
     margin-top: 15px;
@@ -185,18 +210,169 @@ p {
     border: 0;
 }
 
-/* Contenedor de Mega Upload */
-.mega-upload-container {
+/* --- Tu CSS para la galería de imágenes y la sección principal --- */
+
+#upload-photos {
     text-align: center;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#upload-photos h3 {
+    color: #8B0000;
+    margin-bottom: 15px;
+    font-size: 2em;
+}
+
+#upload-photos p {
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 25px auto;
+    line-height: 1.6;
+}
+
+/* Estilo para el botón que abre el modal */
+.action-button {
+    background-color: #4CAF50;
+    /* Un verde bonito */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    /* Margen debajo del botón */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* --- Estilos del Modal --- */
+
+.modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    /* Permanece en la misma posición incluso al hacer scroll */
+    z-index: 1000;
+    /* Asegura que esté por encima de todo lo demás */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* Permite scroll si el contenido es demasiado largo */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Fondo semi-transparente oscuro */
+    backdrop-filter: blur(5px);
+    /* Efecto de desenfoque en el fondo, si el navegador lo soporta */
+    -webkit-backdrop-filter: blur(5px);
+    /* Prefijo para compatibilidad con Safari */
+    animation: fadeIn 0.3s ease-out;
+    /* Animación de aparición */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    /* 10% desde arriba y centrado horizontalmente */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%;
+    /* Ancho predeterminado */
+    max-width: 550px;
+    /* Ancho máximo para pantallas grandes */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    /* Para posicionar el botón de cierre */
+    animation: slideIn 0.3s ease-out;
+    /* Animación para el contenido del modal */
+    text-align: center;
+    /* Centrar el contenido dentro del modal */
+}
+
+.modal-content h4 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.modal-info {
+    color: #888;
+    font-size: 0.9em;
     margin-top: 20px;
 }
 
-.mega-upload-container iframe {
-    max-width: 100%; /* Asegura que el iframe sea responsive */
-    width: 400px; /* Ancho fijo para pantallas grandes, limitado por max-width */
-    height: 100px; /* Ajusta la altura según sea necesario */
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Contenedor del iframe dentro del modal */
+.mega-upload-container-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    /* Asegura que el iframe no se vea desproporcionado */
+    margin: 0 auto;
+    /* Centra el contenedor del iframe */
+    padding: 15px;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mega-upload-container-modal iframe {
+    width: 400px;
+    height: 100px;
+    border: none;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Botones */
@@ -212,36 +388,95 @@ p {
 }
 
 .button:hover {
-    background-color: #A52A2A; /* Un rojo más claro al pasar el ratón */
+    background-color: #A52A2A;
+    /* Un rojo más claro al pasar el ratón */
 }
 
-/* Estilos de Contacto con Viñetas */
-#contact ul {
-    list-style: disc; /* Tipo de viñeta: disco */
-    padding-left: 25px; /* Espacio para las viñetas */
-    margin-top: 15px;
-    text-align: left; /* Alinea el texto de la lista a la izquierda */
-    display: inline-block; /* Para que el ul no ocupe todo el ancho si no lo necesita */
+/* --- Tu CSS anterior para otras secciones --- */
+
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    /* Un poco más de padding */
+    background-color: #f0f8ff;
+    /* Un azul muy claro para un toque suave */
+    border-top: 1px solid #e0e0e0;
 }
 
-#contact ul li {
-    margin-bottom: 8px;
-    color: #555;
-}
-
-#contact ul li strong {
+#contact h3 {
     color: #333;
+    margin-bottom: 15px;
+    font-size: 2.2em;
+    /* Un poco más grande para el título de contacto */
 }
 
-#contact ul li a {
-    color: #8B0000;
+#contact p {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.contact-list {
+    list-style: none;
+    /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0 auto 30px auto;
+    /* Centra la lista */
+    max-width: 350px;
+    /* Limita el ancho de la lista para que se vea más compacta */
+}
+
+.contact-list li {
+    margin-bottom: 15px;
+    /* Espacio entre los elementos de la lista */
+}
+
+.whatsapp-link {
+    display: inline-flex;
+    /* Permite alinear el icono y el texto */
+    align-items: center;
+    /* Alinea verticalmente los ítems */
     text-decoration: none;
-    transition: color 0.3s ease;
+    /* Quita el subrayado del enlace */
+    color: #25D366;
+    /* Color verde de WhatsApp */
+    font-weight: bold;
+    font-size: 1.15em;
+    /* Tamaño de fuente un poco más grande */
+    padding: 10px 20px;
+    border: 2px solid #25D366;
+    border-radius: 30px;
+    /* Bordes muy redondeados para un aspecto de botón */
+    background-color: #e6ffec;
+    /* Fondo muy claro para el botón */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#contact ul li a:hover {
-    text-decoration: underline;
-    color: #A52A2A;
+.whatsapp-link:hover {
+    background-color: #25D366;
+    /* Fondo verde oscuro al pasar el ratón */
+    color: white;
+    /* Texto blanco al pasar el ratón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    /* Pequeño efecto de levantamiento */
+}
+
+.whatsapp-icon {
+    width: 28px;
+    /* Tamaño del icono de WhatsApp */
+    height: 28px;
+    margin-right: 10px;
+    /* Espacio entre el icono y el texto */
+    filter: brightness(0.9);
+    /* Oscurece un poco el icono para que destaque */
+}
+
+.whatsapp-link:hover .whatsapp-icon {
+    filter: brightness(1.2) invert(1);
+    /* Hace que el icono se vea blanco o más brillante al pasar el ratón */
 }
 
 /* Footer */
@@ -264,27 +499,33 @@ footer {
     }
 
     .image-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        grid-template-columns: 1fr;
+        /* Una columna en pantallas pequeñas */
     }
 
     .location-details {
-        flex-direction: column; /* Apila los bloques de ubicación en pantallas pequeñas */
+        flex-direction: column;
+        /* Apila los bloques de ubicación en pantallas pequeñas */
         align-items: center;
     }
 
     .detail-block {
-        max-width: 90%; /* Ajusta el ancho para que quepan mejor */
+        max-width: 90%;
+        /* Ajusta el ancho para que quepan mejor */
         width: 100%;
     }
 
     .map-container {
-        padding-bottom: 60%; /* Ajusta la proporción de aspecto para móviles */
+        padding-bottom: 60%;
+        /* Ajusta la proporción de aspecto para móviles */
     }
 
     .mega-upload-container iframe {
-        width: 100%; /* El iframe de Mega ocupa todo el ancho disponible */
+        width: 100%;
+        /* El iframe de Mega ocupa todo el ancho disponible */
     }
 }
+
 
 @media (max-width: 480px) {
     main {
@@ -302,5 +543,30 @@ footer {
 
     #contact ul {
         padding-left: 20px;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        /* Más arriba en pantallas pequeñas */
+        width: 95%;
+        padding: 20px;
+    }
+
+    .mega-upload-container-modal iframe {
+        width: 100%;
+        /* El iframe ocupa todo el ancho del contenedor en móviles */
+        height: 100px;
+        /* Altura fija */
+    }
+
+    .whatsapp-link {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .whatsapp-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
     }
 }
