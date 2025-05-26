@@ -105,17 +105,39 @@ p {
     margin-top: 20px;
 }
 
-.image-item img {
-    width: 100%;
-    height: 200px; /* Altura fija para las imágenes */
-    object-fit: cover; /* Recorta la imagen para cubrir el espacio */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+.image-item {
+    position: relative; /* Necesario para posicionar la imagen dentro */
+    width: 100%; /* El contenedor ocupa el 100% del ancho de su columna */
+    padding-bottom: 56.25%; /* ¡Esto crea la relación de aspecto 16:9! (9 / 16 = 0.5625) */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del marco 16:9 */
+    border-radius: 8px; /* Aplicado al contenedor para que el radio de borde se vea */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
 }
 
-.image-item img:hover {
+.image-item img {
+    position: absolute; /* Permite posicionar la imagen dentro de .image-item */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* La imagen llenará el contenedor 16:9 */
+    object-fit: cover; /* La imagen cubrirá el espacio manteniendo su proporción, recortándose si es necesario */
+    /* Aquí quitamos el border-radius y box-shadow para que se apliquen al contenedor .image-item */
+    transition: transform 0.3s ease; /* Transición para el hover */
+}
+
+.image-item:hover img { /* Aplicamos el hover al img dentro del item */
     transform: scale(1.05);
+}
+
+/* --- */
+
+/* **Para mover la segunda imagen un poco hacia abajo** */
+.image-grid .image-item:nth-child(2) img {
+    object-position: 50% 5%; /* Ajusta la posición vertical de la segunda imagen.
+                                 El primer valor (50%) es horizontal (centrado).
+                                 El segundo valor (60%) es vertical: 0% es arriba, 100% es abajo.
+                                 Puedes cambiar 60% por un valor mayor para moverla más abajo,
+                                 o menor (por ejemplo, 55%) para moverla menos. */
 }
 
 /* Detalles de Ubicación */
