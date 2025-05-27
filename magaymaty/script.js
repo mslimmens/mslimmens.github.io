@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
 
     // Define el tiempo mínimo en milisegundos que la pantalla de carga debe mostrarse
-    const tiempoMinimoMilisegundos = 4000; // Volvemos a 3 segundos para que se vea bien el efecto
+    const tiempoMinimoMilisegundos = 2000; // Volvemos a 3 segundos para que se vea bien el efecto
 
     let recursosCargados = false;
     let tiempoMinimoCumplido = false;
@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para generar símbolos aleatorios
     function generarSimbolos() {
         const tiposSimbolo = ['corazon', 'estrella'];
-        const numSimbolos = 20; // Aumentamos un poco el número de símbolos
-        const duracionAnimacionBase = 5000; // Duración base en milisegundos
+        const numSimbolos = 0; // Aumentamos un poco el número de símbolos
+        const duracionAnimacionBase = 0; // Duración base en milisegundos
 
         for (let i = 0; i < numSimbolos; i++) {
             const simbolo = document.createElement('div');
