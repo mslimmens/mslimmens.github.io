@@ -96,6 +96,29 @@
             <p>¡Gracias por capturar estos momentos con nosotros!</p>
         </section>
 
+        <button id="openWishesModalBtn" class="floating-button">
+            <i class="fas fa-heart"></i> Dejar Deseos </button>
+
+        <div id="wishesModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <section id="buenos-deseos-modal">
+                    <h2>¡Déjanos un Mensaje de Buenos Deseos!</h2>
+                    <p>Tus palabras significan mucho para nosotros. Envíanos tus felicitaciones y consejos.</p>
+
+                    <form name="submit-form-modal"> <label for="nombre-modal">Tu Nombre:</label>
+                        <input type="text" id="nombre-modal" name="Nombre" required>
+
+                        <label for="mensaje-modal">Tu Mensaje:</label>
+                        <textarea id="mensaje-modal" name="Mensaje" rows="6" required></textarea>
+
+                        <button type="submit">Enviar Deseo</button>
+                    </form>
+                    <p class="modal-info">¡Gracias por ser parte de este día tan especial!</p>
+                </section>
+            </div>
+        </div>
+
         <section id="contact">
             <h3>¿Necesitas Ayuda o Información Adicional?</h3>
             <p>No dudes en contactarnos directamente por WhatsApp:</p>
