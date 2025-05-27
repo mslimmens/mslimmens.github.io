@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const body = document.body;
 
     // Define el tiempo mínimo en milisegundos que la pantalla de carga debe mostrarse
-    const tiempoMinimoMilisegundos = 3000; // Volvemos a 3 segundos para que se vea bien el efecto
+    const tiempoMinimoMilisegundos = 4000; // Volvemos a 3 segundos para que se vea bien el efecto
 
     let recursosCargados = false;
     let tiempoMinimoCumplido = false;
