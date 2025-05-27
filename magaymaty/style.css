@@ -1,78 +1,28 @@
-/* Estilos para la pantalla de carga (mantén los que ya tienes) */
 #pantalla-carga {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #ffffff; /* O el color que desees para el fundido */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    transition: opacity 0.5s ease-out;
-    overflow: hidden; /* Muy importante para que los corazones/estrellas no salgan de la pantalla */
+
+    /* ASEGÚRATE DE QUE ESTA LÍNEA ESTÉ ASÍ: */
+    transition: opacity 1s ease-out; /* Puedes probar 0.5s para más rápido, o 1.5s para más lento */
+
+    overflow: hidden; /* Mantener esto es buena práctica */
 }
 
 #pantalla-carga.oculto {
+    /* Y ESTAS PROPIEDADES DEBEN ESTAR ASÍ EN LA CLASE QUE SE AÑADE: */
     opacity: 0;
     visibility: hidden;
 }
 
-#pantalla-carga img {
-    max-width: 80%;
-    max-height: 80%;
-    position: relative; /* Para que los símbolos queden por encima si es necesario */
-    z-index: 10; /* Asegura que la imagen esté por encima de los símbolos si se superponen */
-}
-
-/* Estilos para los corazones y estrellas generados */
-.simbolo-carga {
-    position: absolute; /* Para posicionarlos libremente */
-    pointer-events: none; /* Asegura que no interfieran con clics */
-    opacity: 0; /* Empiezan invisibles para animarlos */
-    transform: scale(0) rotate(0deg); /* Empiezan pequeños y sin rotación */
-    animation: flotar-simbolo 5s ease-out forwards; /* Animación de flotar */
-    /* Puedes ajustar la duración y el tipo de animación */
-}
-
-/* Estilos específicos para el corazón (puedes usar un SVG, un ícono de fuente o caracteres Unicode) */
-.simbolo-corazon {
-    color: #ff69b4; /* Rosa */
-    font-size: 30px; /* Tamaño base */
-    /* Opcional: si usas un caracter Unicode para el corazón */
-    content: '❤'; /* Ejemplo: '&#10084;' si lo pones directamente en HTML */
-}
-
-/* Estilos específicos para la estrella (puedes usar un SVG, un ícono de fuente o caracteres Unicode) */
-.simbolo-estrella {
-    color: #ffd700; /* Dorado */
-    font-size: 25px; /* Tamaño base */
-    /* Opcional: si usas un caracter Unicode para la estrella */
-    content: '⭐'; /* Ejemplo: '&#9733;' si lo pones directamente en HTML */
-}
-
-
-/* Keyframes para la animación de flotar y aparecer */
-@keyframes flotar-simbolo {
-    0% {
-        opacity: 0;
-        transform: scale(0) rotate(0deg);
-        /* Puedes agregar translate inicial para que aparezcan desde abajo, por ejemplo */
-    }
-    20% {
-        opacity: 1;
-        transform: scale(1) rotate(random_rotation_deg); /* La rotación será aleatoria */
-    }
-    80% {
-        opacity: 1;
-        transform: scale(0.8) rotate(random_rotation_deg) translateY(-200px); /* Ejemplo de movimiento hacia arriba */
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0.5) rotate(random_rotation_deg) translateY(-400px); /* Desaparecen y suben */
-    }
-}
+/* ... el resto de tus estilos para la pantalla de carga, símbolos, etc. ... */
 
 /* Nota: La 'random_rotation_deg' en @keyframes no es real CSS.
    La rotación aleatoria se aplicará con JavaScript.
