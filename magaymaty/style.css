@@ -4,19 +4,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
-    /* O el color que desees para el fundido */
+    background-color: #ffffff; /* O el color que desees para el fundido */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
 
     /* ASEGÚRATE DE QUE ESTA LÍNEA ESTÉ ASÍ: */
-    transition: opacity 1s ease-out;
-    /* Puedes probar 0.5s para más rápido, o 1.5s para más lento */
+    transition: opacity 1s ease-out; /* Puedes probar 0.5s para más rápido, o 1.5s para más lento */
 
-    overflow: hidden;
-    /* Mantener esto es buena práctica */
+    overflow: hidden; /* Mantener esto es buena práctica */
 }
 
 #pantalla-carga.oculto {
@@ -45,8 +42,7 @@ body {
 
 
 body.cargado {
-    overflow: auto;
-    /* Restaura el scrollbar cuando la carga termina */
+    overflow: auto; /* Restaura el scrollbar cuando la carga termina */
 }
 
 header {
@@ -259,25 +255,20 @@ p {
 }
 
 #como-llegar h2 {
-    color: #5d4a67;
-    /* Un color bonito para el título */
+    color: #5d4a67; /* Un color bonito para el título */
     margin-bottom: 20px;
 }
 
 .mapa-container {
     position: relative;
-    padding-bottom: 56.25%;
-    /* Relación de aspecto 16:9 (altura / ancho) */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho) */
     height: 0;
     overflow: hidden;
     max-width: 100%;
     background: #000;
-    margin: 0 auto;
-    /* Centrar el contenedor del mapa */
-    border-radius: 8px;
-    /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
+    margin: 0 auto; /* Centrar el contenedor del mapa */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
 }
 
 .mapa-container iframe {
@@ -375,29 +366,26 @@ p {
 }
 
 #openUploadModalBtn2 {
-    position: fixed;
-    bottom: 20px;
-    /* Misma distancia desde abajo que el botón de deseos en desktop */
-    right: 20px;
-    /* A la derecha */
-    z-index: 1040;
-    /* Un z-index ligeramente menor que el botón de deseos en móvil */
-    /* Agrega tus estilos de color, padding, etc. */
-    background-color: #007bff;
+    position: fixed; /* Esto lo fija a la ventana del navegador */
+    bottom: 20px;    /* 20px desde el borde inferior de la ventana */
+    right: 20px;     /* 20px desde el borde derecho de la ventana */
+    z-index: 1000;   /* Asegura que esté por encima de la mayoría de los otros elementos */
+
+    /* Estilos adicionales para que se vea bien como un botón flotante */
+    background-color: #007bff; /* Color azul, puedes cambiarlo */
     color: white;
-    padding: 12px 20px;
+    padding: 15px 20px;
     border: none;
-    border-radius: 30px;
+    border-radius: 30px; /* Bordes muy redondeados (píldora) */
+    font-size: 1em;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para que "flote" */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
 }
 
 #openUploadModalBtn2:hover {
-    background-color: #0056b3;
-    /* Un azul más oscuro al pasar el ratón */
-    transform: translateY(-2px);
-    /* Pequeño efecto de "elevación" */
+    background-color: #0056b3; /* Un azul más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto de "elevación" */
 }
 
 .modal-content {
@@ -552,182 +540,6 @@ p {
     /* Espacio entre los elementos de la lista */
 }
 
-/* --- Estilos para el Botón Flotante (Fijo) --- */
-.floating-button {
-    position: fixed;
-    bottom: 20px;
-    /* Distancia desde el borde inferior */
-    margin: 0px 0px 25px;
-    left: 20px;
-    /* Distancia desde el borde izquierdo */
-    z-index: 1050;
-    /* Asegura que esté por encima de la mayoría de los elementos, incluyendo el modal cuando está cerrado */
-
-    background-color: #ff69b4;
-    /* Color de tu boda, por ejemplo */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 30px;
-    /* Botón en forma de píldora */
-    font-size: 1.1em;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: flex;
-    /* Para alinear el icono y el texto */
-    align-items: center;
-    gap: 8px;
-    /* Espacio entre el icono y el texto */
-}
-
-.floating-button i {
-    font-size: 1.2em;
-    /* Tamaño del icono */
-}
-
-.floating-button:hover {
-    background-color: #e652a2;
-    /* Un tono más oscuro al pasar el ratón */
-    transform: translateY(-2px);
-}
-
-/* --- Estilos para el Modal (Ventana Emergente) --- */
-.modal {
-    display: none;
-    /* Oculto por defecto */
-    position: fixed;
-    /* Fijo en la pantalla */
-    z-index: 1000;
-    /* Asegura que esté por encima de todo lo demás, excepto el botón flotante */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Cubre todo el ancho */
-    height: 100%;
-    /* Cubre toda la altura */
-    overflow: auto;
-    /* Permite scroll si el contenido es muy largo */
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Fondo semi-transparente negro */
-    display: flex;
-    /* Para centrar el contenido del modal */
-    justify-content: center;
-    align-items: center;
-    /* Centrado verticalmente */
-    opacity: 0;
-    /* Empieza invisible para la transición */
-    transition: opacity 0.3s ease-out;
-    /* Transición de aparición */
-}
-
-.modal.show {
-    display: flex;
-    /* Lo hace visible */
-    opacity: 1;
-    /* Transición a visible */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    /* Centrar automáticamente */
-    padding: 30px;
-    border: 1px solid #888;
-    border-radius: 10px;
-    width: 90%;
-    /* Ancho responsivo */
-    max-width: 600px;
-    /* Ancho máximo */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    /* Para posicionar el botón de cerrar */
-    transform: translateY(-50px);
-    /* Empieza un poco arriba para el efecto */
-    transition: transform 0.3s ease-out;
-    /* Transición de movimiento */
-}
-
-.modal.show .modal-content {
-    transform: translateY(0);
-    /* Vuelve a su posición normal */
-}
-
-.close-button {
-    color: #aaa;
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #333;
-    text-decoration: none;
-}
-
-/* Estilos para los elementos del formulario dentro del modal (puedes ajustar según tu diseño) */
-#buenos-deseos-modal h2 {
-    color: #5d4a67;
-    margin-bottom: 20px;
-}
-
-#buenos-deseos-modal p {
-    margin-bottom: 25px;
-}
-
-#buenos-deseos-modal label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-    text-align: left;
-}
-
-#buenos-deseos-modal input[type="text"],
-#buenos-deseos-modal textarea {
-    width: calc(100% - 22px);
-    /* Ancho completo con padding y borde */
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    /* Incluye padding y borde en el ancho */
-}
-
-#buenos-deseos-modal textarea {
-    resize: vertical;
-    /* Permite redimensionar verticalmente */
-    min-height: 100px;
-}
-
-#buenos-deseos-modal button[type="submit"] {
-    background-color: #007bff;
-    /* Un azul para el botón de enviar */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-#buenos-deseos-modal button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-.modal-info {
-    font-size: 0.85em;
-    color: #777;
-    margin-top: 15px;
-}
-
 .whatsapp-link {
     display: inline-flex;
     /* Permite alinear el icono y el texto */
@@ -784,77 +596,6 @@ footer {
     margin-top: 40px;
 }
 
-/* --- Estilos para la Sección de Música --- */
-#musica-boda {
-    padding: 60px 20px;
-    /* Más padding para espacio */
-    background-color: #fcfcfc;
-    /* Un fondo muy claro */
-    text-align: center;
-    border-top: 1px solid #eee;
-    /* Separador sutil */
-    border-bottom: 1px solid #eee;
-}
-
-#musica-boda h2 {
-    color: #5d4a67;
-    margin-bottom: 25px;
-    font-size: 2.2em;
-}
-
-#musica-boda p {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Contenedor para el iframe de Spotify (para hacerlo responsivo) */
-.spotify-embed-container {
-    position: relative;
-    width: 100%;
-    /* La altura del iframe de Spotify es fija (152px), así que no necesitamos padding-bottom para relación de aspecto */
-    /* max-width: 700px; ya lo tienes inline, pero puedes ponerlo aquí */
-    margin: 0 auto;
-    /* Centrar el contenedor */
-}
-
-.spotify-embed-container iframe {
-    width: 100%;
-    /* Asegura que el iframe ocupe todo el ancho del contenedor */
-    height: 152px;
-    /* La altura fija de Spotify */
-    display: block;
-    /* Elimina espacio extra debajo del iframe */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
-}
-
-/* Estilos para el botón de Sugerir Canción */
-.spotify-suggest-button {
-    display: inline-block;
-    /* Para que se comporte como un botón */
-    margin-top: 20px;
-    background-color: #1DB954;
-    /* Color verde de Spotify */
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 30px;
-    /* Bordes redondeados */
-    font-size: 1.1em;
-    text-decoration: none;
-    /* Quitar subrayado del enlace */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
-}
-
-.spotify-suggest-button:hover {
-    background-color: #1ED760;
-    /* Un verde más claro al pasar el ratón */
-    transform: translateY(-2px);
-}
-
 /* Responsive Design */
 @media (max-width: 768px) {
     header h1 {
@@ -890,51 +631,6 @@ footer {
     .mega-upload-container iframe {
         width: 100%;
         /* El iframe de Mega ocupa todo el ancho disponible */
-    }
-
-    .floating-button {
-        left: auto;
-        right: 20px;
-        bottom: 70px;
-        /* Cambiado de 80px a 100px para subirlo más */
-        padding: 10px 15px;
-        font-size: 1em;
-    }
-
-    /* Puedes hacer que el icono sea más grande o que el texto desaparezca para ahorrar espacio si lo deseas */
-    .floating-button i {
-        font-size: 1.1em;
-    }
-
-    /* Opcional: Ocultar texto en móviles si es necesario */
-    /* .floating-button span {
-        display: none;
-    } */
-
-    #openUploadModalBtn2 {
-        bottom: 20px;
-        /* Mantén su posición original en móvil */
-        right: 20px;
-        /* Si quieres que se vea bien en móvil, ajusta su tamaño también */
-        padding: 10px 15px;
-        font-size: 1em;
-    }
-
-    #musica-boda {
-        padding: 40px 15px;
-    }
-
-    #musica-boda h2 {
-        font-size: 1.8em;
-    }
-
-    #musica-boda p {
-        font-size: 1em;
-    }
-
-    .spotify-suggest-button {
-        padding: 10px 20px;
-        font-size: 1em;
     }
 }
 
