@@ -32,6 +32,30 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // --- Logic for the "Upload Photos and Videos" buttons ---
+    const openUploadModalBtn = document.getElementById('openUploadModalBtn');
+    const openUploadModalBtn2 = document.getElementById('openUploadModalBtn2');
+
+    // Define the URL where photos and videos will be uploaded
+    // (This is the Mega.nz file request link you provided previously)
+    const uploadURL = 'https://mega.nz/filerequest/nzQT3zwEWKQ';
+
+    // Add click event listener to the first button
+    if (openUploadModalBtn) {
+        openUploadModalBtn.addEventListener('click', function () {
+            // Open the specified URL in a new tab/window
+            window.open(uploadURL, '_blank');
+        });
+    }
+
+    // Add click event listener to the second button
+    if (openUploadModalBtn2) {
+        openUploadModalBtn2.addEventListener('click', function () {
+            // Open the specified URL in a new tab/window
+            window.open(uploadURL, '_blank');
+        });
+    }
+
     // --- Lógica para Abrir/Cerrar el Modal de Buenos Deseos ---
     const openWishesModalBtn = document.getElementById('openWishesModalBtn');
     const wishesModal = document.getElementById('wishesModal');
@@ -68,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Lógica del Formulario de Buenos Deseos (Google Apps Script) para el Modal ---
     // ¡¡¡ REEMPLAZA ESTA URL CON LA TUYA ACTUALIZADA DE GOOGLE APPS SCRIPT !!!
+    
     let scripURL = 'https://script.google.com/macros/s/AKfycbysFkJRtW1UGgKJ8zC7B79IPINJ7gbmUZJjs6JDgJndVrcGvPvXxE3IaomTBhNCKZU_/exec'; 
     let formModal = document.forms['submit-form-modal']; // Referencia al formulario dentro del modal
 
@@ -111,6 +136,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Lógica del Botón de Subida de Formulario (Antiguo showUploadFormBtn) ---
     // (Mantén o elimina esto según lo necesites)
+    
     const showUploadFormBtn = document.getElementById('showUploadFormBtn');
     const megaUploadContainer = document.querySelector('.mega-upload-container');
 
@@ -122,23 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 this.textContent = 'Ocultar Formulario';
             }
-        });
-    }
-
-    // --- Lógica del Botón para Abrir Nueva Ventana (openUploadModalBtn) ---
-    const openUploadModalBtn = document.getElementById('openUploadModalBtn');
-
-    if (openUploadModalBtn) {
-        openUploadModalBtn.addEventListener('click', function () {
-            window.open('https://mega.nz/filerequest/nzQT3zwEWKQ', '_blank');
-        });
-    }
-
-    const openUploadModalBtn2 = document.getElementById('openUploadModalBtn2');
-
-    if (openUploadModalBtn2) {
-        openUploadModalBtn2.addEventListener('click', function () {
-            window.open('https://mega.nz/filerequest/nzQT3zwEWKQ', '_blank');
         });
     }
 

@@ -1,35 +1,10 @@
-#pantalla-carga {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff; /* O el color que desees para el fundido */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-
-    /* ASEGÚRATE DE QUE ESTA LÍNEA ESTÉ ASÍ: */
-    transition: opacity 1s ease-out; /* Puedes probar 0.5s para más rápido, o 1.5s para más lento */
-
-    overflow: hidden; /* Mantener esto es buena práctica */
+/* =============================== */
+/* 1. Estilos Generales y Base  */
+/* =============================== */
+html {
+    scroll-behavior: smooth;
 }
 
-#pantalla-carga.oculto {
-    /* Y ESTAS PROPIEDADES DEBEN ESTAR ASÍ EN LA CLASE QUE SE AÑADE: */
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* ... el resto de tus estilos para la pantalla de carga, símbolos, etc. ... */
-
-/* Nota: La 'random_rotation_deg' en @keyframes no es real CSS.
-   La rotación aleatoria se aplicará con JavaScript.
-   La animación 'flotar-simbolo' se usará para la opacidad y el movimiento general.
-*/
-
-/* Estilos Generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -37,35 +12,53 @@ body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    overflow-x: hidden; /* Previene scroll horizontal */
+}
+
+body.cargado {
+    overflow-y: auto; /* Restaura el scrollbar vertical cuando la carga termina */
+}
+
+/* ============================ */
+/* 2. Pantalla de Carga (Loader) */
+/* ============================ */
+#pantalla-carga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out, visibility 1s ease-out;
     overflow: hidden;
 }
 
-
-body.cargado {
-    overflow: auto; /* Restaura el scrollbar cuando la carga termina */
+#pantalla-carga.oculto {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Asegura que no bloquee clics una vez oculto */
 }
 
+/* =============================== */
+/* 3. Cabecera (Header)         */
+/* =============================== */
 header {
     background-image: url('images/mgmt.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #8B0000;
-
     color: white;
-    padding: 60px 20px;
-    /* Mantendremos este padding base */
+    padding: 60px 20px 80px; /* padding-bottom ajustado para la fecha */
     text-align: center;
     position: relative;
-    /* IMPORTANTE: Esto es crucial para que el posicionamiento absoluto de .date funcione */
     z-index: 1;
-
-    /* Añadimos un padding-bottom mínimo para dejar espacio para la fecha */
-    padding-bottom: 80px;
-    /* Ajusta este valor si necesitas más espacio debajo de la fecha */
 }
 
-/* Opcional: Capa oscura superpuesta para mejorar la legibilidad del texto */
 header::before {
     content: '';
     position: absolute;
@@ -94,25 +87,17 @@ header h2 {
 header .date {
     font-size: 1.2em;
     font-style: italic;
-
-    /* **NUEVAS PROPIEDADES PARA POSICIONAMIENTO INFERIOR IZQUIERDA** */
     position: absolute;
-    /* Saca a .date del flujo normal del documento */
     bottom: 20px;
-    /* Lo posiciona a 20px del borde inferior del header */
     left: 20px;
-    /* Lo posiciona a 20px del borde izquierdo del header */
     text-align: left;
-    /* Alinea el texto a la izquierda */
     width: auto;
-    /* Permite que el ancho se ajuste al contenido, no al 100% */
-    transform: none;
-    /* Quitamos la transformación que usábamos para centrar */
-
     z-index: 2;
-    /* Asegura que esté por encima de la capa oscura */
 }
 
+/* =============================== */
+/* 4. Contenido Principal (Main)*/
+/* =============================== */
 main {
     padding: 20px;
     max-width: 960px;
@@ -120,7 +105,6 @@ main {
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    /* Pequeño redondeado para el main */
 }
 
 section {
@@ -145,7 +129,9 @@ p {
     text-align: justify;
 }
 
-/* Galería de Imágenes */
+/* =============================== */
+/* 5. Galería de Imágenes       */
+/* =============================== */
 .image-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -155,52 +141,35 @@ p {
 
 .image-item {
     position: relative;
-    /* Necesario para posicionar la imagen dentro */
     width: 100%;
-    /* El contenedor ocupa el 100% del ancho de su columna */
-    padding-bottom: 56.25%;
-    /* ¡Esto crea la relación de aspecto 16:9! (9 / 16 = 0.5625) */
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
     overflow: hidden;
-    /* Oculta cualquier parte de la imagen que se salga del marco 16:9 */
     border-radius: 8px;
-    /* Aplicado al contenedor para que el radio de borde se vea */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra para el contenedor */
 }
 
 .image-item img {
     position: absolute;
-    /* Permite posicionar la imagen dentro de .image-item */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* La imagen llenará el contenedor 16:9 */
     object-fit: cover;
-    /* La imagen cubrirá el espacio manteniendo su proporción, recortándose si es necesario */
-    /* Aquí quitamos el border-radius y box-shadow para que se apliquen al contenedor .image-item */
     transition: transform 0.3s ease;
-    /* Transición para el hover */
 }
 
 .image-item:hover img {
-    /* Aplicamos el hover al img dentro del item */
     transform: scale(1.05);
 }
 
-/* --- */
-
-/* **Para mover la segunda imagen un poco hacia abajo** */
+/* Ajuste específico para la segunda imagen */
 .image-grid .image-item:nth-child(2) img {
     object-position: 50% 5%;
-    /* Ajusta la posición vertical de la segunda imagen.
-                                 El primer valor (50%) es horizontal (centrado).
-                                 El segundo valor (60%) es vertical: 0% es arriba, 100% es abajo.
-                                 Puedes cambiar 60% por un valor mayor para moverla más abajo,
-                                 o menor (por ejemplo, 55%) para moverla menos. */
 }
 
-/* Detalles de Ubicación */
+/* =============================== */
+/* 6. Ubicación y Mapas         */
+/* =============================== */
 .location-details {
     display: flex;
     justify-content: space-around;
@@ -214,7 +183,6 @@ p {
     flex: 1;
     min-width: 280px;
     max-width: 45%;
-    /* Para que en pantallas grandes haya dos columnas */
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
@@ -227,11 +195,9 @@ p {
     font-size: 1.3em;
 }
 
-/* Contenedor de Mapas Responsive */
 .map-container {
     position: relative;
-    padding-bottom: 75%;
-    /* Proporción de aspecto 4:3 (altura / anchura * 100). Puedes ajustar esto */
+    padding-bottom: 75%; /* Proporción de aspecto 4:3 */
     height: 0;
     overflow: hidden;
     margin-top: 15px;
@@ -247,56 +213,20 @@ p {
     border: 0;
 }
 
-/* Estilos para la sección del mapa */
 #como-llegar {
     padding: 40px 20px;
     background-color: #f9f9f9;
     text-align: center;
 }
 
-#como-llegar h2 {
-    color: #5d4a67; /* Un color bonito para el título */
-    margin-bottom: 20px;
+#como-llegar .image-item {
+    margin: 0 auto; /* Centrar la imagen dentro de esta sección */
+    max-width: 600px; /* Ajusta según sea necesario */
 }
 
-.mapa-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho) */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    margin: 0 auto; /* Centrar el contenedor del mapa */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
-}
-
-.mapa-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.mapa-info {
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #666;
-}
-
-.mapa-info a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.mapa-info a:hover {
-    text-decoration: underline;
-}
-
-/* --- Tu CSS para la galería de imágenes y la sección principal --- */
-
+/* =============================== */
+/* 7. Subir Fotos y Botones de Acción */
+/* =============================== */
 #upload-photos {
     text-align: center;
     padding: 40px 20px;
@@ -320,18 +250,14 @@ p {
     line-height: 1.6;
 }
 
-/* Estilo para el botón que abre el modal */
 .action-button {
     background-color: #4CAF50;
-    /* Un verde bonito */
     color: white;
     padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
-    margin-bottom: 25px;
-    /* Margen debajo del botón */
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -340,274 +266,102 @@ p {
     transform: translateY(-2px);
 }
 
-/* --- Estilos del Modal --- */
-
-.modal {
-    display: none;
-    /* Oculto por defecto */
+/* =============================== */
+/* 8. Botones Flotantes         */
+/* =============================== */
+.floating-button {
     position: fixed;
-    /* Permanece en la misma posición incluso al hacer scroll */
-    z-index: 1000;
-    /* Asegura que esté por encima de todo lo demás */
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    /* Permite scroll si el contenido es demasiado largo */
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Fondo semi-transparente oscuro */
-    backdrop-filter: blur(5px);
-    /* Efecto de desenfoque en el fondo, si el navegador lo soporta */
-    -webkit-backdrop-filter: blur(5px);
-    /* Prefijo para compatibilidad con Safari */
-    animation: fadeIn 0.3s ease-out;
-    /* Animación de aparición */
+    bottom: 20px; /* Unificado con openUploadModalBtn2 */
+    left: 20px;
+    z-index: 1050;
+    background-color: #ff69b4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.floating-button i {
+    font-size: 1.2em;
+}
+
+.floating-button:hover {
+    background-color: #e652a2;
+    transform: translateY(-2px);
 }
 
 #openUploadModalBtn2 {
     position: fixed;
-    bottom: 20px; /* Misma distancia desde abajo que el botón de deseos en desktop */
-    right: 20px; /* A la derecha */
-    z-index: 1040; /* Un z-index ligeramente menor que el botón de deseos en móvil */
-    /* Agrega tus estilos de color, padding, etc. */
+    bottom: 20px; /* Unificado con floating-button */
+    right: 20px;
+    z-index: 1040;
     background-color: #007bff;
     color: white;
     padding: 12px 20px;
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #openUploadModalBtn2:hover {
-    background-color: #0056b3; /* Un azul más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Pequeño efecto de "elevación" */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 10% auto;
-    /* 10% desde arriba y centrado horizontalmente */
-    padding: 30px;
-    border: 1px solid #888;
-    width: 90%;
-    /* Ancho predeterminado */
-    max-width: 550px;
-    /* Ancho máximo para pantallas grandes */
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    /* Para posicionar el botón de cierre */
-    animation: slideIn 0.3s ease-out;
-    /* Animación para el contenido del modal */
-    text-align: center;
-    /* Centrar el contenido dentro del modal */
-}
-
-.modal-content h4 {
-    color: #333;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-}
-
-.modal-info {
-    color: #888;
-    font-size: 0.9em;
-    margin-top: 20px;
-}
-
-.close-button {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #333;
-    text-decoration: none;
-}
-
-/* Contenedor del iframe dentro del modal */
-.mega-upload-container-modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 450px;
-    /* Asegura que el iframe no se vea desproporcionado */
-    margin: 0 auto;
-    /* Centra el contenedor del iframe */
-    padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.mega-upload-container-modal iframe {
-    width: 400px;
-    height: 100px;
-    border: none;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Botones */
-.button {
-    display: inline-block;
-    background-color: #8B0000;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.button:hover {
-    background-color: #A52A2A;
-    /* Un rojo más claro al pasar el ratón */
-}
-
-/* --- Tu CSS anterior para otras secciones --- */
-
-#contact {
-    text-align: center;
-    padding: 50px 20px;
-    /* Un poco más de padding */
-    background-color: #f0f8ff;
-    /* Un azul muy claro para un toque suave */
-    border-top: 1px solid #e0e0e0;
-}
-
-#contact h3 {
-    color: #333;
-    margin-bottom: 15px;
-    font-size: 2.2em;
-    /* Un poco más grande para el título de contacto */
-}
-
-#contact p {
-    color: #555;
-    max-width: 600px;
-    margin: 0 auto 30px auto;
-    line-height: 1.6;
-}
-
-.contact-list {
-    list-style: none;
-    /* Quita los puntos de la lista */
-    padding: 0;
-    margin: 0 auto 30px auto;
-    /* Centra la lista */
-    max-width: 350px;
-    /* Limita el ancho de la lista para que se vea más compacta */
-}
-
-.contact-list li {
-    margin-bottom: 15px;
-    /* Espacio entre los elementos de la lista */
-}
-
-/* --- Estilos para el Botón Flotante (Fijo) --- */
-.floating-button {
-    position: fixed;
-    bottom: 20px; /* Distancia desde el borde inferior */
-    margin: 0px 0px 25px;
-    left: 20px;  /* Distancia desde el borde izquierdo */
-    z-index: 1050; /* Asegura que esté por encima de la mayoría de los elementos, incluyendo el modal cuando está cerrado */
-
-    background-color: #ff69b4; /* Color de tu boda, por ejemplo */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 30px; /* Botón en forma de píldora */
-    font-size: 1.1em;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: flex; /* Para alinear el icono y el texto */
-    align-items: center;
-    gap: 8px; /* Espacio entre el icono y el texto */
-}
-
-.floating-button i {
-    font-size: 1.2em; /* Tamaño del icono */
-}
-
-.floating-button:hover {
-    background-color: #e652a2; /* Un tono más oscuro al pasar el ratón */
+    background-color: #0056b3;
     transform: translateY(-2px);
 }
 
-/* --- Estilos para el Modal (Ventana Emergente) --- */
+/* =============================== */
+/* 9. Modal (Ventana Emergente) */
+/* =============================== */
 .modal {
-    display: none; /* Oculto por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 1000; /* Asegura que esté por encima de todo lo demás, excepto el botón flotante */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Cubre todo el ancho */
-    height: 100%; /* Cubre toda la altura */
-    overflow: auto; /* Permite scroll si el contenido es muy largo */
-    background-color: rgba(0,0,0,0.7); /* Fondo semi-transparente negro */
-    display: flex; /* Para centrar el contenido del modal */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: flex; /* Se usa display: flex para centrar */
     justify-content: center;
-    align-items: center; /* Centrado verticalmente */
-    opacity: 0; /* Empieza invisible para la transición */
-    transition: opacity 0.3s ease-out; /* Transición de aparición */
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    pointer-events: none; /* Crucial: no captura clics cuando está oculto */
 }
 
 .modal.show {
-    display: flex; /* Lo hace visible */
-    opacity: 1; /* Transición a visible */
+    opacity: 1;
+    pointer-events: auto; /* Captura clics cuando está visible */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: auto; /* Centrar automáticamente */
+    margin: auto;
     padding: 30px;
     border: 1px solid #888;
+    width: 90%;
+    max-width: 600px;
     border-radius: 10px;
-    width: 90%; /* Ancho responsivo */
-    max-width: 600px; /* Ancho máximo */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    position: relative; /* Para posicionar el botón de cerrar */
-    transform: translateY(-50px); /* Empieza un poco arriba para el efecto */
-    transition: transform 0.3s ease-out; /* Transición de movimiento */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    transform: translateY(-50px);
+    transition: transform 0.3s ease-out;
 }
 
 .modal.show .modal-content {
-    transform: translateY(0); /* Vuelve a su posición normal */
+    transform: translateY(0);
 }
 
 .close-button {
@@ -627,7 +381,13 @@ p {
     text-decoration: none;
 }
 
-/* Estilos para los elementos del formulario dentro del modal (puedes ajustar según tu diseño) */
+.modal-info {
+    color: #888;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para el formulario de Buenos Deseos en el modal */
 #buenos-deseos-modal h2 {
     color: #5d4a67;
     margin-bottom: 20px;
@@ -647,21 +407,21 @@ p {
 
 #buenos-deseos-modal input[type="text"],
 #buenos-deseos-modal textarea {
-    width: calc(100% - 22px); /* Ancho completo con padding y borde */
+    width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+    box-sizing: border-box;
 }
 
 #buenos-deseos-modal textarea {
-    resize: vertical; /* Permite redimensionar verticalmente */
+    resize: vertical;
     min-height: 100px;
 }
 
 #buenos-deseos-modal button[type="submit"] {
-    background-color: #007bff; /* Un azul para el botón de enviar */
+    background-color: #007bff;
     color: white;
     padding: 12px 25px;
     border: none;
@@ -675,60 +435,97 @@ p {
     background-color: #0056b3;
 }
 
-.modal-info {
-    font-size: 0.85em;
-    color: #777;
-    margin-top: 15px;
+/* Contenedor del iframe dentro del modal (upload-photos) */
+.mega-upload-container-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.mega-upload-container-modal iframe {
+    width: 400px;
+    height: 100px;
+    border: none;
+}
+
+/* =============================== */
+/* 10. Contacto                 */
+/* =============================== */
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f0f8ff;
+    border-top: 1px solid #e0e0e0;
+}
+
+#contact h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2.2em;
+}
+
+#contact p {
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 30px auto;
+    max-width: 350px;
+}
+
+.contact-list li {
+    margin-bottom: 15px;
 }
 
 .whatsapp-link {
     display: inline-flex;
-    /* Permite alinear el icono y el texto */
     align-items: center;
-    /* Alinea verticalmente los ítems */
     text-decoration: none;
-    /* Quita el subrayado del enlace */
     color: #25D366;
-    /* Color verde de WhatsApp */
     font-weight: bold;
     font-size: 1.15em;
-    /* Tamaño de fuente un poco más grande */
     padding: 10px 20px;
     border: 2px solid #25D366;
     border-radius: 30px;
-    /* Bordes muy redondeados para un aspecto de botón */
     background-color: #e6ffec;
-    /* Fondo muy claro para el botón */
     transition: all 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .whatsapp-link:hover {
     background-color: #25D366;
-    /* Fondo verde oscuro al pasar el ratón */
     color: white;
-    /* Texto blanco al pasar el ratón */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
-    /* Pequeño efecto de levantamiento */
 }
 
 .whatsapp-icon {
     width: 28px;
-    /* Tamaño del icono de WhatsApp */
     height: 28px;
     margin-right: 10px;
-    /* Espacio entre el icono y el texto */
     filter: brightness(0.9);
-    /* Oscurece un poco el icono para que destaque */
 }
 
 .whatsapp-link:hover .whatsapp-icon {
     filter: brightness(1.2) invert(1);
-    /* Hace que el icono se vea blanco o más brillante al pasar el ratón */
 }
 
-/* Footer */
+/* =============================== */
+/* 11. Pie de Página (Footer)   */
+/* =============================== */
 footer {
     text-align: center;
     padding: 20px;
@@ -737,29 +534,32 @@ footer {
     margin-top: 40px;
 }
 
-/* --- Estilos para la Sección de Música --- */
-#musica-boda {
-    padding: 60px 20px; /* Más padding para espacio */
-    background-color: #fcfcfc; /* Un fondo muy claro */
-    text-align: center;
-    border-top: 1px solid #eee; /* Separador sutil */
-    border-bottom: 1px solid #eee;
+/* =============================== */
+/* 12. Animaciones              */
+/* =============================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
-#musica-boda h2 {
-    color: #5d4a67;
-    margin-bottom: 25px;
-    font-size: 2.2em;
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
-#musica-boda p {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-
-/* Responsive Design */
+/* =============================== */
+/* 13. Diseño Responsivo (@media)*/
+/* =============================== */
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.5em;
@@ -771,58 +571,46 @@ footer {
 
     .image-grid {
         grid-template-columns: 1fr;
-        /* Una columna en pantallas pequeñas */
     }
 
     .location-details {
         flex-direction: column;
-        /* Apila los bloques de ubicación en pantallas pequeñas */
         align-items: center;
     }
 
     .detail-block {
         max-width: 90%;
-        /* Ajusta el ancho para que quepan mejor */
         width: 100%;
     }
 
     .map-container {
         padding-bottom: 60%;
-        /* Ajusta la proporción de aspecto para móviles */
     }
 
-    .mega-upload-container iframe {
+    .mega-upload-container-modal iframe {
         width: 100%;
-        /* El iframe de Mega ocupa todo el ancho disponible */
     }
 
-   .floating-button {
-        left: auto;
-        right: 20px;
-        bottom: 70px; /* Cambiado de 80px a 100px para subirlo más */
+    .floating-button {
+        left: auto; /* Permite que el botón de deseos se mueva a la derecha en móviles */
+        right: 20px; /* Distancia desde la derecha */
+        bottom: 100px; /* Ajustado a 50px del margen inferior en pantallas de hasta 768px */
         padding: 10px 15px;
         font-size: 1em;
     }
 
-    /* Puedes hacer que el icono sea más grande o que el texto desaparezca para ahorrar espacio si lo deseas */
     .floating-button i {
         font-size: 1.1em;
     }
 
-    /* Opcional: Ocultar texto en móviles si es necesario */
-    /* .floating-button span {
-        display: none;
-    } */
-
+    /* Asegúrate de que este botón también esté a 50px si quieres que ambos queden a la misma altura */
     #openUploadModalBtn2 {
-        bottom: 20px; /* Mantén su posición original en móvil */
+        bottom: 50px; /* También ajustado a 50px para mantener la misma altura */
         right: 20px;
-        /* Si quieres que se vea bien en móvil, ajusta su tamaño también */
         padding: 10px 15px;
         font-size: 1em;
     }
 }
-
 
 @media (max-width: 480px) {
     main {
@@ -838,22 +626,35 @@ footer {
         font-size: 1.5em;
     }
 
-    #contact ul {
-        padding-left: 20px;
+    .floating-button {
+        left: auto; /* Permite que el botón de deseos se mueva a la derecha en móviles */
+        right: 20px; /* Distancia desde la derecha */
+        bottom: 100px; /* Ajustado a 50px del margen inferior en pantallas de hasta 768px */
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+
+    .floating-button i {
+        font-size: 1.1em;
+    }
+
+    /* Asegúrate de que este botón también esté a 50px si quieres que ambos queden a la misma altura */
+    #openUploadModalBtn2 {
+        bottom: 50px; /* También ajustado a 50px para mantener la misma altura */
+        right: 20px;
+        padding: 10px 15px;
+        font-size: 1em;
     }
 
     .modal-content {
         margin: 5% auto;
-        /* Más arriba en pantallas pequeñas */
         width: 95%;
         padding: 20px;
     }
 
     .mega-upload-container-modal iframe {
         width: 100%;
-        /* El iframe ocupa todo el ancho del contenedor en móviles */
         height: 100px;
-        /* Altura fija */
     }
 
     .whatsapp-link {
