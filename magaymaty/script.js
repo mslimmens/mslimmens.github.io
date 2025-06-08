@@ -28,16 +28,58 @@ document.addEventListener('DOMContentLoaded', function () {
             pantallaCarga.addEventListener('transitionend', function () {
                 pantallaCarga.style.display = 'none';
                 body.classList.add('cargado');
+                openCanvaModal(); // Abre el modal de Canva después de que el preloader se haya ocultado
             }, { once: true });
         }
     }
+
+    // --- Lógica para Abrir/Cerrar el Modal de Canva al inicio ---
+    const canvaModal = document.getElementById('canvaModal');
+    const closeCanvaModalBtn = document.getElementById('closeCanvaModalBtn');
+
+    function openCanvaModal() {
+        if (canvaModal) {
+            canvaModal.style.display = 'flex';
+            setTimeout(() => {
+                canvaModal.classList.add('show');
+            }, 10);
+            body.style.overflow = 'hidden'; // Evita el scroll en el body cuando el modal está abierto
+        }
+    }
+
+    function closeCanvaModal() {
+        if (canvaModal) {
+            canvaModal.classList.remove('show');
+            setTimeout(() => {
+                canvaModal.style.display = 'none';
+                body.style.overflow = ''; // Restaura el scroll en el body
+            }, 300); // Coincide con la duración de la transición CSS
+        }
+    }
+
+    if (closeCanvaModalBtn) {
+        closeCanvaModalBtn.addEventListener('click', closeCanvaModal);
+    }
+
+    if (canvaModal) {
+        canvaModal.addEventListener('click', function(event) {
+            if (event.target === canvaModal) { // Solo cierra si el clic es en el fondo del modal
+                closeCanvaModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && canvaModal && canvaModal.classList.contains('show')) {
+            closeCanvaModal();
+        }
+    });
 
     // --- Logic for the "Upload Photos and Videos" buttons ---
     const openUploadModalBtn = document.getElementById('openUploadModalBtn');
     const openUploadModalBtn2 = document.getElementById('openUploadModalBtn2');
 
     // Define the URL where photos and videos will be uploaded
-    // (This is the Mega.nz file request link you provided previously)
     const uploadURL = 'https://mega.nz/filerequest/nzQT3zwEWKQ';
 
     // Add click event listener to the first button
@@ -59,9 +101,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- Lógica para Abrir/Cerrar el Modal de Buenos Deseos ---
     const openWishesModalBtn = document.getElementById('openWishesModalBtn');
     const wishesModal = document.getElementById('wishesModal');
-    const closeButton = wishesModal.querySelector('.close-button');
+    // Asegurarse de que wishesModal y closeButton existan antes de intentar usarlos
+    const closeWishesModalBtn = wishesModal ? wishesModal.querySelector('.close-button') : null;
 
-    if (openWishesModalBtn && wishesModal && closeButton) {
+    if (openWishesModalBtn && wishesModal && closeWishesModalBtn) {
         openWishesModalBtn.addEventListener('click', function() {
             wishesModal.style.display = 'flex'; // Cambia a flex para centrar
             setTimeout(() => { // Pequeño retraso para que la transición de opacidad funcione
@@ -70,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             body.style.overflow = 'hidden'; // Evita el scroll en el body cuando el modal está abierto
         });
 
-        closeButton.addEventListener('click', function() {
+        closeWishesModalBtn.addEventListener('click', function() {
             wishesModal.classList.remove('show');
             setTimeout(() => { // Espera a que la transición termine antes de ocultar completamente
                 wishesModal.style.display = 'none';
@@ -79,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Cierra el modal si se hace clic fuera del contenido
-        window.addEventListener('click', function(event) {
+        wishesModal.addEventListener('click', function(event) {
             if (event.target == wishesModal) {
                 wishesModal.classList.remove('show');
                 setTimeout(() => {
@@ -91,16 +134,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // --- Lógica del Formulario de Buenos Deseos (Google Apps Script) para el Modal ---
-    // ¡¡¡ REEMPLAZA ESTA URL CON LA TUYA ACTUALIZADA DE GOOGLE APPS SCRIPT !!!
-    
-    let scripURL = 'https://script.google.com/macros/s/AKfycbysFkJRtW1UGgKJ8zC7B79IPINJ7gbmUZJjs6JDgJndVrcGvPvXxE3IaomTBhNCKZU_/exec'; 
+    let scripURL = 'https://script.google.com/macros/s/AKfycbysFkJRtW1UGgKJ8zC7B79IPINJ7gbmUZJjs6JDgJndVrcGvPvXxE3IaomTBhNCKZU_/exec';
     let formModal = document.forms['submit-form-modal']; // Referencia al formulario dentro del modal
 
-    if (formModal) { 
+    if (formModal) {
         formModal.addEventListener('submit', e => {
             e.preventDefault();
-            
-            // Opcional: Mostrar un mensaje de carga mientras se envía
+
             const submitButton = formModal.querySelector('button[type="submit"]');
             submitButton.disabled = true;
             submitButton.textContent = 'Enviando...';
@@ -114,11 +154,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 if(res.status === 200){
                     formModal.reset();
                     alert('¡Mensaje Enviado Correctamente! Gracias por tus buenos deseos.');
-                    wishesModal.classList.remove('show'); // Cierra el modal al enviar
-                    setTimeout(() => {
-                        wishesModal.style.display = 'none';
-                        body.style.overflow = '';
-                    }, 300); 
+                    if (wishesModal) { // Asegurarse de que wishesModal exista antes de intentar cerrarlo
+                        wishesModal.classList.remove('show');
+                        setTimeout(() => {
+                            wishesModal.style.display = 'none';
+                            body.style.overflow = '';
+                        }, 300);
+                    }
                 } else {
                     alert('Hubo un problema al enviar el mensaje. Inténtalo de nuevo más tarde.');
                 }
@@ -128,15 +170,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert('Error de conexión. Por favor, verifica tu internet e inténtalo de nuevo.');
             })
             .finally(() => {
-                submitButton.disabled = false; // Habilitar el botón de nuevo
-                submitButton.textContent = 'Enviar Deseo'; // Restaurar texto del botón
+                submitButton.disabled = false;
+                submitButton.textContent = 'Enviar Deseo';
             });
         });
     }
 
     // --- Lógica del Botón de Subida de Formulario (Antiguo showUploadFormBtn) ---
-    // (Mantén o elimina esto según lo necesites)
-    
     const showUploadFormBtn = document.getElementById('showUploadFormBtn');
     const megaUploadContainer = document.querySelector('.mega-upload-container');
 
