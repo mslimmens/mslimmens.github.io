@@ -1,0 +1,18 @@
+/* Estilos personalizados si los necesitas */
+.gallery-item {
+    margin-bottom: 15px; /* Espacio entre las imágenes */
+    /* Añadido para asegurar que el elemento completo no se "rompa" entre columnas si el navegador lo intenta */
+    break-inside: avoid;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto; /* Asegura que la imagen mantenga su relación de aspecto, fundamental para mampostería */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    transition: transform 0.2s ease-in-out; /* Transición suave al pasar el mouse */
+    display: block; /* Elimina espacio extra debajo de la imagen */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03); /* Ligeramente más grande al pasar el mouse */
+}
