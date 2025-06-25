@@ -1,0 +1,20 @@
+/* Estilos personalizados si los necesitas */
+.gallery-item {
+    margin-bottom: 15px;
+    /* Espacio entre las imágenes */
+}
+
+.gallery-item img {
+    width: 100%;
+    /* Altura fija para todas las imágenes */
+    /* Recorta la imagen para que cubra el área */
+    border-radius: 8px;
+    /* Bordes ligeramente redondeados */
+    transition: transform 0.2s ease-in-out;
+    /* Transición suave al pasar el mouse */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.03);
+    /* Ligeramente más grande al pasar el mouse */
+}
