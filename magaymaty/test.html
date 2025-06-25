@@ -31,8 +31,16 @@
                     <h5 class="modal-title" id="imageModalLabel"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body text-center">
-                    <img src="" class="img-fluid" id="modalImage" alt="Imagen ampliada">
+                <div class="modal-body text-center position-relative"> <img src="" class="img-fluid" id="modalImage" alt="Imagen ampliada">
+
+                    <button id="prevImageBtn" class="btn btn-dark modal-nav-btn modal-nav-prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button id="nextImageBtn" class="btn btn-dark modal-nav-btn modal-nav-next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -42,7 +50,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     
-    <script src="albun.js"></script>
+    <!--<script src="albun.js"></script>-->
     <script src="bloques.js"></script>
 </body>
 

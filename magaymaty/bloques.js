@@ -18,15 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
         return; // Salir si falta alguna columna
     }
 
+    // Array para almacenar todas las rutas de imagen de la galería en orden
+    const allImagePaths = [];
+    for (let i = 1; i <= numberOfImages; i++) {
+        allImagePaths.push(`${imageFolderPath}${imageBaseName} ${i}${imageExtension}`);
+    }
+
+    let currentImageIndex = 0; // Para rastrear qué imagen se muestra en el modal
+
     // Función para crear un elemento de galería
     function createGalleryItem(index) {
         const galleryItem = document.createElement('div');
         galleryItem.classList.add('gallery-item');
 
         const anchor = document.createElement('a');
+        // Usamos el índice real (1-basado) para el nombre de archivo y la descripción
         anchor.href = `${imageFolderPath}${imageBaseName} ${index}${imageExtension}`;
         anchor.setAttribute('data-bs-toggle', 'modal');
         anchor.setAttribute('data-bs-target', '#imageModal');
+        // Almacenamos el índice 0-basado de la imagen en el data-attribute para fácil acceso
+        anchor.setAttribute('data-image-index', index - 1);
 
         const img = document.createElement('img');
         img.src = `${imageFolderPath}${imageBaseName} ${index}${imageExtension}`;
@@ -42,27 +53,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Distribuir las imágenes en las columnas
     for (let i = 1; i <= numberOfImages; i++) {
         const galleryItem = createGalleryItem(i);
-        // Calcula a qué columna le toca añadir la foto
-        // (i - 1) para que el índice empiece en 0 para el módulo
         const columnIndex = (i - 1) % columns.length;
         columns[columnIndex].appendChild(galleryItem);
     }
 
-    // Lógica para el modal de Bootstrap (si la tenías en otro lado, muévela aquí)
+    // --- Lógica para el modal de Bootstrap y navegación ---
     const imageModal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = imageModal.querySelector('.modal-title');
+    const prevImageBtn = document.getElementById('prevImageBtn');
+    const nextImageBtn = document.getElementById('nextImageBtn');
+
     if (imageModal) {
         imageModal.addEventListener('show.bs.modal', event => {
-            // Button that triggered the modal
-            const openerLink = event.relatedTarget;
-            // Extract info from data-bs-* attributes
-            const imageUrl = openerLink.getAttribute('href');
-            const imageAlt = openerLink.querySelector('img').getAttribute('alt');
+            const openerLink = event.relatedTarget; // El enlace que abrió el modal
+            const imageIndexStr = openerLink.getAttribute('data-image-index');
+            currentImageIndex = parseInt(imageIndexStr, 10); // Guarda el índice actual
 
-            const modalImage = imageModal.querySelector('#modalImage');
-            const modalTitle = imageModal.querySelector('.modal-title');
+            updateModalContent(currentImageIndex); // Actualiza el contenido al abrir
+        });
+    }
 
-            modalImage.src = imageUrl;
-            modalTitle.textContent = imageAlt;
+    function updateModalContent(index) {
+        // Asegurarse de que el índice esté dentro de los límites
+        if (index < 0) {
+            index = allImagePaths.length - 1; // Si es menor que 0, ir a la última
+        } else if (index >= allImagePaths.length) {
+            index = 0; // Si es mayor o igual al total, ir a la primera
+        }
+        currentImageIndex = index; // Actualiza el índice global
+
+        const imageUrl = allImagePaths[currentImageIndex];
+        const imageNumber = currentImageIndex + 1; // Para la descripción
+
+        modalImage.src = imageUrl;
+        modalImage.alt = `Descripción de la foto ${imageNumber}`;
+        modalTitle.textContent = `Descripción de la foto ${imageNumber}`;
+    }
+
+    // Event listeners para los botones de navegación
+    if (prevImageBtn) {
+        prevImageBtn.addEventListener('click', () => {
+            updateModalContent(currentImageIndex - 1);
+        });
+    }
+
+    if (nextImageBtn) {
+        nextImageBtn.addEventListener('click', () => {
+            updateModalContent(currentImageIndex + 1);
         });
     }
 });
