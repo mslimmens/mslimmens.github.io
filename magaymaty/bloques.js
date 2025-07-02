@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const fileName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
 
         modalImage.src = imageUrl;
-        modalImage.alt = `Maga y Maty`;
-        modalTitle.textContent = `Maga y Maty`;
+        modalImage.alt = ``;
+        modalTitle.textContent = ``;
         
         // ACTUALIZAR EL ENLACE DE DESCARGA
         if (downloadImageBtn) {
