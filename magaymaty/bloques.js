@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const numberOfImages = 40; // Puedes cambiar esto para el número total de fotos que tengas
+    const numberOfImages = 21; // Puedes cambiar esto para el número total de fotos que tengas
     const imageBaseName = 'Archivo'; // La base del nombre de tus archivos de imagen (ej. "Archivo 1.jpeg")
     const imageFolderPath = 'imagenes_boda/'; // La carpeta donde están tus imágenes
     const imageExtension = '.jpeg'; // La extensión de tus archivos de imagen
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const img = document.createElement('img');
         img.src = `${imageFolderPath}${imageBaseName} ${index}${imageExtension}`;
         img.classList.add('img-fluid');
-        img.alt = `Descripción de la foto ${index}`;
+        img.alt = `Boda Maga y Maty`;
 
         anchor.appendChild(img);
         galleryItem.appendChild(anchor);
@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const fileName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
 
         modalImage.src = imageUrl;
-        modalImage.alt = `Descripción de la foto ${imageNumber}`;
-        modalTitle.textContent = `Descripción de la foto ${imageNumber}`;
+        modalImage.alt = `Maga y Maty`;
+        modalTitle.textContent = `Maga y Maty`;
         
         // ACTUALIZAR EL ENLACE DE DESCARGA
         if (downloadImageBtn) {
