@@ -1,20 +1,17 @@
-/* Estilos personalizados si los necesitas */
-.gallery-item {
-    margin-bottom: 15px; /* Espacio entre las imágenes */
-    /* Añadido para asegurar que el elemento completo no se "rompa" entre columnas si el navegador lo intenta */
-    break-inside: avoid;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Color de fondo claro */
+    color: #333;
+    line-height: 1.6;
 }
 
-.gallery-item img {
-    width: 100%;
-    height: auto; /* Asegura que la imagen mantenga su relación de aspecto, fundamental para mampostería */
-    border-radius: 8px; /* Bordes ligeramente redondeados */
-    transition: transform 0.2s ease-in-out; /* Transición suave al pasar el mouse */
-    display: block; /* Elimina espacio extra debajo de la imagen */
+h1, h2, h3, h4, h5, h6 {
+    color: #4CAF50; /* Un color más vibrante para los títulos */
+    font-weight: bold;
 }
 
-.gallery-item img:hover {
-    transform: scale(1.03); /* Ligeramente más grande al pasar el mouse */
+.lead {
+    color: #666;
 }
 
 /* Estilos personalizados si los necesitas */
@@ -22,21 +19,43 @@
     margin-bottom: 15px; /* Espacio entre las imágenes */
     /* Añadido para asegurar que el elemento completo no se "rompa" entre columnas si el navegador lo intenta */
     break-inside: avoid;
+    page-break-inside: avoid; /* Para compatibilidad de impresión */
+    -webkit-column-break-inside: avoid; /* Para navegadores basados en WebKit */
+    display: inline-block; /* Importante para que break-inside funcione con column-count */
+    width: 100%; /* Asegura que ocupe todo el ancho de su columna */
 }
 
 .gallery-item img {
     width: 100%;
     height: auto; /* Asegura que la imagen mantenga su relación de aspecto, fundamental para mampostería */
     border-radius: 8px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para las imágenes */
     transition: transform 0.2s ease-in-out; /* Transición suave al pasar el mouse */
     display: block; /* Elimina espacio extra debajo de la imagen */
 }
 
 .gallery-item img:hover {
     transform: scale(1.03); /* Ligeramente más grande al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* Sombra más pronunciada al pasar el mouse */
 }
 
-/* --- Nuevos estilos para los botones de navegación del modal --- */
+/* --- Nuevos estilos para la galería de mampostería (responsive) --- */
+.gallery-container {
+    /* Por defecto, en móviles (menos de 768px), los elementos se apilan */
+    display: block; /* Esto hace que los gallery-item se apilen */
+    margin-top: 20px;
+    padding: 0 15px; /* Pequeño padding para evitar que las imágenes toquen los bordes */
+}
+
+/* Regla para pantallas medianas (md) y más grandes */
+@media (min-width: 768px) {
+    .gallery-container {
+        column-count: 4; /* Crea 4 columnas para el efecto de mampostería */
+        column-gap: 15px; /* Espacio entre columnas */
+    }
+}
+
+/* --- Estilos para los botones de navegación del modal --- */
 .modal-nav-btn {
     position: absolute;
     top: 50%;
@@ -45,17 +64,142 @@
     padding: 1rem 0.5rem; /* Ajusta el padding para que el botón sea más grande */
     opacity: 0.7; /* Ligeramente transparente */
     transition: opacity 0.3s ease;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
+    color: white; /* Icono blanco */
+    border-radius: 50%; /* Botones circulares */
+    width: 40px; /* Ancho fijo para el círculo */
+    height: 40px; /* Alto fijo para el círculo */
+    display: flex; /* Para centrar el icono */
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-nav-btn:hover {
     opacity: 1; /* Opacidad completa al pasar el mouse */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-nav-prev {
-    left: 10px; /* Posición a la izquierda */
+    left: 10px; /* Posiciona el botón izquierdo */
 }
 
 .modal-nav-next {
-    right: 10px; /* Posición a la derecha */
+    right: 10px; /* Posiciona el botón derecho */
 }
-/* --- Fin de nuevos estilos --- */
+
+/* Estilos para el modal de descarga (si el botón es primario) */
+.modal-header .btn-outline-primary {
+    color: #0d6efd;
+    border-color: #0d6efd;
+}
+.modal-header .btn-outline-primary:hover {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Estilos del Preloader (si se usa) */
+.pantalla-carga {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333; /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+    opacity: 1;
+}
+
+.pantalla-carga.oculto {
+    opacity: 0;
+    pointer-events: none; /* Permite clics a través una vez que se oculta */
+}
+
+/* Estilos para el body cuando el preloader ha terminado */
+body.cargado {
+    overflow: auto; /* Permite el scroll una vez que la página está cargada */
+}
+
+/* Estilos para Modales Personalizados (Canva, Deseos) si se usan */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex; /* Usar flex para centrar */
+    justify-content: center;
+    align-items: center;
+    z-index: 1050; /* Más alto que el modal de Bootstrap */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content-canva, .modal-content-wishes {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.show .modal-content-canva,
+.modal-overlay.show .modal-content-wishes {
+    transform: translateY(0);
+}
+
+.modal-content-canva .close-button,
+.modal-content-wishes .close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-content-canva .close-button:hover,
+.modal-content-wishes .close-button:hover {
+    color: #333;
+}
+
+.wishes-form input[type="text"],
+.wishes-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+.wishes-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.wishes-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
