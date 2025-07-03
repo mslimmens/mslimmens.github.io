@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const numberOfImages = 94; // Puedes cambiar esto para el número total de fotos que tengas
+    const numberOfImages = 98; // Puedes cambiar esto para el número total de fotos que tengas
     const imageBaseName = 'Archivo'; // La base del nombre de tus archivos de imagen (ej. "Archivo 1.jpeg")
     const imageFolderPath = 'imagenes_boda/'; // La carpeta donde están tus imágenes
     const imageExtension = '.jpeg'; // La extensión de tus archivos de imagen
