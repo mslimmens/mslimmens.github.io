@@ -1,0 +1,45 @@
+body {
+  background: #f8fafc;
+}
+.card {
+  background: #f6f7fb;
+  border: none;
+  border-radius: 18px;
+}
+.card-title {
+  color: #7b6cf6;
+  font-weight: 700;
+}
+.btn-primary {
+  background: #a3d8f4;
+  border: none;
+  color: #4a4e69;
+}
+.btn-primary:hover {
+  background: #b8e0fc;
+  color: #22223b;
+}
+.list-group-item {
+  background: #fdf6fb;
+  border: none;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+.list-group-item.checked {
+  background: #d6e5fa;
+  text-decoration: line-through;
+  color: #b0b0b0;
+}
+.form-control:focus {
+  border-color: #a3d8f4;
+  box-shadow: 0 0 0 0.2rem #a3d8f480;
+}
+input[type="checkbox"] {
+  accent-color: #7b6cf6;
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 12px;
+} 
