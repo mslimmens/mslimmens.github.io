@@ -1,0 +1,139 @@
+/* Paleta de colores pastel sugerida: */
+/* Azul cielo pastel: #B0E0E6 */
+/* Rosa suave pastel: #FFC0CB */
+/* Verde menta pastel: #98FB98 */
+/* Lavanda pastel: #E6E6FA */
+/* Durazno pastel: #FFDAB9 */
+/* Amarillo pastel: #FFFACD */
+
+body {
+    font-family: 'Comic Neue', cursive, sans-serif; /* Usamos la fuente de Google Fonts */
+    margin: 0;
+    padding: 0;
+    background-color: #E6E6FA; /* Lavanda pastel para el fondo general */
+    color: #4A4A4A; /* Un gris oscuro suave para el texto */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #B0E0E6; /* Azul cielo pastel */
+    color: #4A4A4A;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 700; /* Negrita para el título */
+    color: #2F4F4F; /* Un tono más oscuro para contraste */
+}
+
+#limpiarLista {
+    background-color: #FFC0CB; /* Rosa suave pastel */
+    color: #4A4A4A;
+    border: 2px solid #FFC0CB; /* Borde del mismo color */
+    padding: 10px 20px;
+    border-radius: 20px; /* Bordes más redondeados */
+    cursor: pointer;
+    font-family: 'Comic Neue', cursive, sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#limpiarLista:hover {
+    background-color: #FFB6C1; /* Rosa un poco más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+main {
+    padding: 20px;
+    max-width: 700px; /* Ancho máximo para legibilidad */
+    margin: 20px auto; /* Centrar el contenido */
+}
+
+.item-lista {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 15px; /* Ajuste de padding */
+    border-bottom: 1px dashed #DCDCDC; /* Borde punteado suave */
+    background-color: #FFFACD; /* Amarillo pastel claro para los ítems */
+    margin-bottom: 8px; /* Más espacio entre ítems */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08); /* Sombra más suave */
+    transition: background-color 0.3s ease;
+}
+
+.item-lista:hover {
+    background-color: #FFEFD5; /* Durazno pastel más claro al pasar el ratón */
+}
+
+.item-texto {
+    flex-grow: 1;
+    font-size: 1.15em; /* Tamaño de fuente ligeramente más grande */
+    padding-right: 15px;
+    color: #555;
+}
+
+/* Estilo para el producto marcado (comprado) */
+.comprado {
+    background-color: #98FB98; /* Verde menta pastel para los comprados */
+    opacity: 0.7; /* Ligeramente transparente */
+}
+
+.comprado .item-texto {
+    text-decoration: line-through;
+    color: #777; /* Un gris un poco más oscuro */
+}
+
+/* El checkbox (personalizado para el estilo cómic) */
+.item-lista input[type="checkbox"] {
+    appearance: none;
+    width: 30px; /* Más grande */
+    height: 30px; /* Más grande */
+    border: 3px solid #FFC0CB; /* Borde rosa pastel */
+    border-radius: 8px; /* Bordes cuadrados suaves */
+    cursor: pointer;
+    margin-right: 10px;
+    position: relative;
+    flex-shrink: 0;
+    background-color: white; /* Fondo blanco para el checkbox */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilo para el checkbox marcado */
+.item-lista input[type="checkbox"]:checked {
+    background-color: #FFC0CB; /* Fondo rosa pastel cuando está marcado */
+    border-color: #FFB6C1;
+}
+
+/* El checkmark (el V) dentro del checkbox */
+.item-lista input[type="checkbox"]:checked::after {
+    content: '✓'; /* Un 'v' más suave o un 'x' si prefieres */
+    color: #4A4A4A; /* Color oscuro para el checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px; /* Tamaño del checkmark */
+    font-weight: 700; /* Más grueso */
+}
+
+#cargando {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 30px;
+    background-color: #B0E0E6; /* Mismo azul pastel que el header */
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+}

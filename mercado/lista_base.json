@@ -1,0 +1,22 @@
+[
+    {"id": "p01", "nombre": "Leche", "comprado": false},
+    {"id": "p02", "nombre": "Queso rallar", "comprado": false},
+    {"id": "p03", "nombre": "Pan lactal", "comprado": false},
+    {"id": "p04", "nombre": "Rapiditas", "comprado": false},
+    {"id": "p05", "nombre": "Nachos", "comprado": false},
+    {"id": "p06", "nombre": "Carne picada", "comprado": false},
+    {"id": "p07", "nombre": "Cebollita verdeo", "comprado": false},
+    {"id": "p08", "nombre": "Aceitunas", "comprado": false},
+    {"id": "p09", "nombre": "Papas noisette", "comprado": false},
+    {"id": "p10", "nombre": "Crema de leche", "comprado": false},
+    {"id": "p11", "nombre": "Morrón", "comprado": false},
+    {"id": "p12", "nombre": "Ricota", "comprado": false},
+    {"id": "p13", "nombre": "Agua mineral", "comprado": false},
+    {"id": "p14", "nombre": "Ajo", "comprado": false},
+    {"id": "p15", "nombre": "Condimentos (Varios)", "comprado": false},
+    {"id": "p16", "nombre": "Manteca", "comprado": false},
+    {"id": "p17", "nombre": "Mayonesa", "comprado": false},
+    {"id": "p18", "nombre": "Yogurt natural", "comprado": false},
+    {"id": "p19", "nombre": "Bebidas espirituosas", "comprado": false},
+    {"id": "p20", "nombre": "Jabón líquido ropa", "comprado": false}
+]
