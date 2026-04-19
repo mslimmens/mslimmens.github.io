@@ -882,3 +882,178 @@ Section jobs
 .white-color h1 {
   color: inherit;
 }
+
+/* Anclas: compensar barra al navegar por #secciones */
+#inicio,
+#servicios,
+#comunicacion-real,
+#trabajamos-juntos,
+#soluciones,
+#sobre-maga,
+#contacto {
+  scroll-margin-top: 96px;
+}
+
+.main-banner-sublink-wrap {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.main-banner-sublink {
+  display: inline;
+  color: var(--accent-cyan);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.main-banner-sublink:hover {
+  color: var(--accent-magenta);
+}
+
+.site-subpage .subpage-main {
+  padding-top: 6.5rem;
+  padding-bottom: 2rem;
+}
+
+.subpage-title {
+  font-size: 2rem;
+  margin-bottom: 0.35rem;
+}
+
+.navbar-light.bg-dark-color .navbar-nav .nav-item .nav-link.nav-link-active {
+  color: var(--accent-cyan) !important;
+}
+
+.trabajamos-section {
+  padding: 2.5rem 0 1rem;
+}
+
+.google-form-shell {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.google-form-placeholder {
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border: 2px dashed rgba(34, 211, 238, 0.35);
+  border-radius: 16px;
+  background: rgba(18, 8, 31, 0.65);
+}
+
+.google-form-placeholder p {
+  max-width: 36rem;
+}
+
+.google-form-iframe {
+  display: block;
+  width: 100%;
+  min-height: 720px;
+  border: 0;
+  border-radius: 12px;
+}
+
+.porfolio-page-section {
+  padding: 0 0 3rem;
+}
+
+.porfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.porfolio-filter {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  cursor: default;
+}
+
+.porfolio-filter-active {
+  color: #0a0514;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-magenta));
+  border-color: transparent;
+}
+
+.porfolio-card {
+  height: 100%;
+  padding: 1.25rem;
+  border-radius: 20px;
+  background: linear-gradient(165deg, rgba(244, 114, 182, 0.1), var(--bg-card));
+  border: 1px solid rgba(244, 114, 182, 0.25);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.porfolio-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.45);
+}
+
+.porfolio-thumb {
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.45), rgba(34, 211, 238, 0.2));
+}
+
+.porfolio-thumb-alt {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.4), rgba(168, 85, 247, 0.25));
+}
+
+.porfolio-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-amber);
+  margin-bottom: 0.5rem;
+}
+
+.porfolio-card-title {
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.35rem;
+}
+
+.porfolio-card-desc {
+  font-size: 0.92rem;
+  margin-bottom: 0.75rem;
+}
+
+.porfolio-card-link {
+  display: inline-flex !important;
+  font-weight: 700;
+  color: var(--accent-cyan) !important;
+}
+
+.porfolio-card-link:hover {
+  color: var(--accent-magenta) !important;
+}
+
+.porfolio-card-muted {
+  display: inline;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.porfolio-footnote {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 2rem;
+  margin-bottom: 0;
+}

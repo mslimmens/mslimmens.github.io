@@ -23,6 +23,7 @@ mybutton = document.getElementById("myBtn");
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
+  if (!mybutton) return;
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
   } else {
@@ -41,10 +42,10 @@ function topFunction() {
 (function($){
 	"use strict";
 	jQuery(document).on('ready', function () {
-
-        // MixItUp Shorting
 		$(function(){
-            $('.shorting').mixItUp();
+            if (typeof $.fn.mixItUp === "function" && $(".shorting").length) {
+                $(".shorting").mixItUp();
+            }
         });
       });
 }(jQuery));
@@ -65,17 +66,15 @@ function hizoClick() {
 
 document.addEventListener("DOMContentLoaded", function() {
   const inicio = document.querySelector(".inicio");
-  const imagenPrincipal = document.querySelector(".inicio img");
+  const imagenPrincipal = inicio ? inicio.querySelector("img") : null;
+  if (!inicio || !imagenPrincipal) return;
 
-  // Cambiar la imagen al hacer scroll
   window.addEventListener("scroll", function() {
       const scrollPos = window.scrollY;
       const translateY = scrollPos / 2;
-
       imagenPrincipal.style.transform = `translateY(-${translateY}px)`;
   });
 
-  // Reiniciar la imagen al dejar de hacer scroll o mover el mouse
   inicio.addEventListener("scroll", function() {
       imagenPrincipal.style.transform = "translate(0, 0)";
   });
