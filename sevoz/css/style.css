@@ -663,6 +663,45 @@ Section jobs
   padding: 4rem 0 3rem;
 }
 
+.comunicacion-real-section {
+  padding: 1rem 0 1rem;
+}
+
+.manifesto-card {
+  padding: 1.75rem;
+  border-radius: 20px;
+  background: linear-gradient(165deg, rgba(244, 114, 182, 0.12), var(--bg-card));
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+}
+
+.manifesto-card h3 {
+  color: #fff;
+  margin-bottom: 0.85rem;
+}
+
+.manifesto-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.manifesto-card li {
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.6rem;
+  color: var(--text-muted);
+}
+
+.manifesto-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-cyan);
+  font-weight: 800;
+}
+
 .service-card {
   position: relative;
   height: 100%;
