@@ -82,31 +82,33 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// Añade este código para agregar un efecto al hacer hover sobre los círculos
-const circulos = document.querySelectorAll(".circulo");
-
-circulos.forEach(circulo => {
-    circulo.addEventListener("mouseover", function() {
-        this.querySelector("img").style.transform = "scale(1.2)";
+// Hover sobre íconos de redes
+const circulos = document.querySelectorAll(".redes-sociales .circulo");
+circulos.forEach(function (circulo) {
+    var img = circulo.querySelector("img");
+    if (!img) return;
+    circulo.addEventListener("mouseover", function () {
+        img.style.transform = "scale(1.2)";
     });
-
-    circulo.addEventListener("mouseleave", function() {
-        this.querySelector("img").style.transform = "scale(1)";
+    circulo.addEventListener("mouseleave", function () {
+        img.style.transform = "scale(1)";
     });
 });
 
 
 // Función para manejar el evento de desplazamiento
 function scrollToSection(sectionId) {
+  if (sectionId === "home") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
   var section = document.getElementById(sectionId);
   if (section) {
-    // Obtiene la posición absoluta de la sección
-    var sectionTop = section.getBoundingClientRect().top + window.scrollY - 100; // Ajusta la posición según tus necesidades
-
-    // Realiza el desplazamiento suavizado hacia la sección
+    var offset = sectionId === "inicio" ? 0 : 88;
+    var sectionTop = section.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({
-      top: sectionTop,
-      behavior: 'smooth'
+      top: Math.max(0, sectionTop),
+      behavior: "smooth"
     });
   }
 }

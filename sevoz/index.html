@@ -1,27 +1,16 @@
 <!--head-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- metadatos-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-    <title>Maga Baldovino Locutora</title>
-    <meta name="description" content="Te invito a conocer más sobre estos maravillosos seres de Luz." />
+    <title>SeVoz — Maga Baldovino | Locución y comunicación</title>
+    <meta name="description"
+        content="Locución, comunicación, voz para tus proyectos. Maga Baldovino: locutora, actriz y packs personalizados." />
     <meta name="author" content="Matias Slimmens" />
-    <meta name="copyright" content="..." />
-    <meta name="keywords" content="..." />
-    <!--por cambios dariamente-->
     <meta http-equiv="cache-control" content="no-cache" />
-
-    <!--redes sociales-->
-    <meta property="og:url" content="..." />
-    <meta property="og:image" content="..." />
-    <meta property="og:description" content="..." />
-    <meta property="og:title" content="..." />
-
-    <!--Ver si es necesario-->
-    <!--<meta name="facebook-domain-verification" content="..." />-->
 
     <link rel="shortcut icon" href="img/seVoz.png">
 
@@ -37,43 +26,48 @@
 <body id="home">
 
     <div class="inicio">
-        <img src="img/seVoz.png" alt="Imagen Principal">
+        <img src="img/seVoz.png" alt="SeVoz — Maga Baldovino">
     </div>
 
     <!--header-->
     <header class="contenido-superior">
         <nav class="navbar navbar-expand-lg navbar-light bg-dark-color navbar-style-two">
             <div class="logo">
-                <a onclick="scrollToSection('home')">
-                    <img class="center" src="img/seVoz.png" alt="First slide">
-                    <!--<img class="center" src="https://bitacoraangelical.com/img/icono.jpeg" alt="First slide">-->
+                <a href="#" onclick="scrollToSection('home'); return false;" aria-label="Ir al inicio">
+                    <img class="center" src="img/seVoz.png" alt="Logo SeVoz">
                 </a>
-
             </div>
 
-            <!--Boton hacia arriba-->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Abrir menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link" onclick="scrollToSection('inicio')">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"
+                                onclick="scrollToSection('inicio'); return false;">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"
+                                onclick="scrollToSection('negocio'); return false;">Negocio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"
+                                onclick="scrollToSection('packs'); return false;">Packs</a></li>
                         <li class="nav-item"><a class="nav-link" href="acerca-de-mi.html">Acerca de mí</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
                                 aria-haspopup="true" aria-expanded="false">Talentos</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="">Locutora</a>
+                                <a class="dropdown-item" href="#"
+                                    onclick="scrollToSection('locucion'); return false;">Locutora</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="talentos/actriz.html">Actriz</a>
+                                <a class="dropdown-item" href="#"
+                                    onclick="scrollToSection('actriz'); return false;">Actriz</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Cantante</a>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link" onclick="scrollToSection('contacto')">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#"
+                                onclick="scrollToSection('contacto'); return false;">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,19 +86,19 @@
 
                                     <h2>✨ Mi voz en todas sus formas y colores ✨</h2>
 
-                                    <h1>Hola! soy Maga Baldovino</h1>
-                                    <p>Quiero compartir con vos mi recorrido por el mundo de la locución, vamos?</p>
+                                    <h1>Hola, soy Maga Baldovino</h1>
+                                    <p>Te acompaño con locución profesional, comunicación clara y propuestas en pack
+                                        para que tu marca suene como vos querés.</p>
 
-                                    <!-- Contenedor para los círculos -->
                                     <div class="main-circulos-container">
-                                        <a onclick="scrollToSection('locucion')">
-                                            <div class="main-container-circulo">Locutora</div>
+                                        <a href="#" onclick="scrollToSection('locucion'); return false;">
+                                            <div class="main-container-circulo">Locución</div>
                                         </a>
-                                        <a onclick="scrollToSection('actriz')">
-                                            <div class="main-container-circulo">actriz</div>
+                                        <a href="#" onclick="scrollToSection('actriz'); return false;">
+                                            <div class="main-container-circulo">Actriz</div>
                                         </a>
-                                        <a href="#">
-                                            <div class="main-container-circulo">Cantante</div>
+                                        <a href="#" onclick="scrollToSection('packs'); return false;">
+                                            <div class="main-container-circulo">Packs</div>
                                         </a>
                                     </div>
                                 </div>
@@ -112,7 +106,8 @@
 
                             <div class="col-lg-4 col-md-12">
                                 <div class="banner-image">
-                                    <img src="img/pp.jpg" class="rounded-circle main-banner-image">
+                                    <img src="img/pp.jpg" class="rounded-circle main-banner-image"
+                                        alt="Retrato de Maga Baldovino">
                                 </div>
                             </div>
                         </div>
@@ -121,148 +116,275 @@
             </div>
         </div>
 
-        <div id="contacto" class="redes-sociales">
+        <section id="negocio" class="negocio-section" aria-labelledby="titulo-negocio">
+            <div class="container">
+                <div class="section-title-block">
+                    <span class="section-eyebrow">Lo que hago</span>
+                    <h2 id="titulo-negocio">Negocio y servicios</h2>
+                    <p class="lead">Voz, guión y presencia para proyectos que necesitan conectar de verdad con la
+                        audiencia.</p>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <article class="service-card">
+                            <div class="icon-wrap" aria-hidden="true">🎙</div>
+                            <h3>Locución</h3>
+                            <p>Institucional, comercial, e-learning y narración. Entonación adaptable y entregas listas
+                                para broadcast o digital.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <article class="service-card">
+                            <div class="icon-wrap" aria-hidden="true">💬</div>
+                            <h3>Comunicación</h3>
+                            <p>Mensajes coherentes con tu tono de marca: guiones, adaptaciones y revisiones hasta que el
+                                texto suene natural al hablarlo.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <article class="service-card">
+                            <div class="icon-wrap" aria-hidden="true">📻</div>
+                            <h3>Spots y cuñas</h3>
+                            <p>Propuestas sonoras para radio, podcast o redes, con foco en timing, impacto y
+                                memorabilidad.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <article class="service-card">
+                            <div class="icon-wrap" aria-hidden="true">🌐</div>
+                            <h3>Voice over</h3>
+                            <p>Proyectos en español rioplatense u otras variantes según briefing; coordinación remota y
+                                archivos en el formato que necesites.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <article class="service-card">
+                            <div class="icon-wrap" aria-hidden="true">🎬</div>
+                            <h3>Actuación de voz</h3>
+                            <p>Personajes, doblaje o contenido creativo donde la voz lleva la escena. Mirá también la
+                                sección <a href="#" onclick="scrollToSection('actriz'); return false;">Actriz</a>.</p>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <article class="service-card">
+                            <div class="icon-wrap" aria-hidden="true">🤝</div>
+                            <h3>Asesoría creativa</h3>
+                            <p>Ideas para lanzamientos, storytelling breve y acompañamiento en la primera versión de
+                                piezas que combinan audio y video.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packs" class="packs-section" aria-labelledby="titulo-packs">
+            <div class="container">
+                <div class="section-title-block">
+                    <span class="section-eyebrow">Contratá por proyecto</span>
+                    <h2 id="titulo-packs">Packs disponibles</h2>
+                    <p class="lead">Cada pack agrupa creación o edición según lo que necesites: podés combinarlos o
+                        pedir una cotización a medida.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <article class="pack-card">
+                            <span class="pack-badge">Audio</span>
+                            <h3>Pack Locución</h3>
+                            <p class="pack-lead">Ideal para cuñas, IVR o videos con voz en off.</p>
+                            <ul>
+                                <li>Brief y una ronda de ajustes de guión</li>
+                                <li>Grabación en calidad broadcast</li>
+                                <li>Edición básica y master (WAV / MP3)</li>
+                                <li>Hasta 2 tomas alternativas en frases clave</li>
+                            </ul>
+                            <a class="pack-cta"
+                                href="https://api.whatsapp.com/send?phone=5491166086090&amp;text=Hola%20Maga%2C%20quiero%20consultar%20por%20el%20Pack%20Locuci%C3%B3n"
+                                target="_blank" rel="noopener noreferrer">Consultar pack</a>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <article class="pack-card">
+                            <span class="pack-badge">Video</span>
+                            <h3>Pack Video</h3>
+                            <p class="pack-lead">Para reels, ads o contenido de marca.</p>
+                            <ul>
+                                <li>Guion corto o adaptación del tuyo</li>
+                                <li>Locución sincronizada con el corte</li>
+                                <li>Edición de video (intro, texto en pantalla, música libre)</li>
+                                <li>Export en formatos para redes</li>
+                            </ul>
+                            <a class="pack-cta"
+                                href="https://api.whatsapp.com/send?phone=5491166086090&amp;text=Hola%20Maga%2C%20quiero%20consultar%20por%20el%20Pack%20Video"
+                                target="_blank" rel="noopener noreferrer">Consultar pack</a>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <article class="pack-card">
+                            <span class="pack-badge">Imagen</span>
+                            <h3>Pack Imagen</h3>
+                            <p class="pack-lead">Piezas visuales que acompañan tu mensaje.</p>
+                            <ul>
+                                <li>Diseño de post o story (plantilla + 3 variaciones)</li>
+                                <li>Tipografías y paleta alineadas a tu marca</li>
+                                <li>Entrega en PNG/JPG y sugerencia de copy</li>
+                                <li>Una ronda de cambios incluida</li>
+                            </ul>
+                            <a class="pack-cta"
+                                href="https://api.whatsapp.com/send?phone=5491166086090&amp;text=Hola%20Maga%2C%20quiero%20consultar%20por%20el%20Pack%20Imagen"
+                                target="_blank" rel="noopener noreferrer">Consultar pack</a>
+                        </article>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <article class="pack-card">
+                            <span class="pack-badge">Full</span>
+                            <h3>Pack Integral</h3>
+                            <p class="pack-lead">Todo junto para un lanzamiento chico o mediano.</p>
+                            <ul>
+                                <li>Estrategia breve de mensaje + guión</li>
+                                <li>Locución + edición de video</li>
+                                <li>Kit de 2 piezas gráficas para redes</li>
+                                <li>Reunión de cierre y entrega documentada</li>
+                            </ul>
+                            <a class="pack-cta"
+                                href="https://api.whatsapp.com/send?phone=5491166086090&amp;text=Hola%20Maga%2C%20quiero%20consultar%20por%20el%20Pack%20Integral"
+                                target="_blank" rel="noopener noreferrer">Consultar pack</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="locucion" class="jobs">
+            <div class="container mt-5">
+                <h2 class="text-center mb-4">Locución</h2>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <p>La locución es el puente entre tu idea y quien escucha: busco que cada palabra suene
+                            auténtica, con buena dicción y emoción justa para el contexto.</p>
+                        <p>Trabajo con estudios y equipos remotos; podés escuchar muestras en el carrusel y seguir más
+                            material en <a href="https://www.youtube.com/channel/UCKxd7Km4cMTMe4U3UK3XHNw"
+                                target="_blank" rel="noopener noreferrer">YouTube</a> o <a
+                                href="https://www.instagram.com/sevoz_bymagalibaldovino/" target="_blank"
+                                rel="noopener noreferrer">Instagram</a>.</p>
+
+                        <h3>¿Querés algo a medida?</h3>
+                        <p>Escribime por WhatsApp o mail y armamos timing, tono y entregas según tu campaña.</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div id="videoCarousellocucion" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <iframe width="100%" height="315" title="Muestra de locución 1"
+                                        src="https://www.youtube.com/embed/uFzL8KTRZ7I?si=SrTcxHDvE2zRuu0-"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="100%" height="315" title="Muestra de locución 2"
+                                        src="https://www.youtube.com/embed/rJqmMT5ljn8?si=KXyNz-7Ek8jCEtmw"
+                                        allowfullscreen></iframe>
+                                </div>
+
+                            </div>
+
+                            <a class="carousel-control-prev" href="#videoCarousellocucion" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#videoCarousellocucion" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Siguiente</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="actriz" class="jobs">
+            <div class="container mt-5">
+                <h2 class="text-center mb-4">Actriz</h2>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <p>La actuación suma matices a la voz: personajes, registros y escucha activa frente a cámara o
+                            micrófono.</p>
+                        <p>Si tu proyecto pasa por ficción, publicidad con acting o contenido donde haga falta una
+                            presencia expresiva, coordinemos casting y ensayos con tiempo.</p>
+
+                        <h3>Más sobre mi trabajo</h3>
+                        <p>Visitá la página <a href="acerca-de-mi.html">Acerca de mí</a> para ver material reciente y
+                            redes.</p>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div id="videoCarouselactriz" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+
+                                <div class="carousel-item active">
+                                    <iframe width="100%" height="315" title="Muestra actriz 1"
+                                        src="https://www.youtube.com/embed/uFzL8KTRZ7I?si=SrTcxHDvE2zRuu0-"
+                                        allowfullscreen></iframe>
+                                </div>
+                                <div class="carousel-item">
+                                    <iframe width="100%" height="315" title="Muestra actriz 2"
+                                        src="https://www.youtube.com/embed/rJqmMT5ljn8?si=KXyNz-7Ek8jCEtmw"
+                                        allowfullscreen></iframe>
+                                </div>
+
+                            </div>
+
+                            <a class="carousel-control-prev" href="#videoCarouselactriz" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#videoCarouselactriz" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Siguiente</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div id="contacto" class="redes-sociales" aria-label="Redes y contacto">
             <div class="circulo">
                 <a href="https://www.instagram.com/sevoz_bymagalibaldovino/" target="_blank"
-                    rel="noopener noreferrer"><img src="img/ig.png" alt="instagram"></a>
+                    rel="noopener noreferrer"><img src="img/ig.png" alt="Instagram"></a>
             </div>
             <div class="circulo">
                 <a href="https://www.linkedin.com/in/magali-baldovino-a6810a67/" target="_blank"
-                    rel="noopener noreferrer"><img src="img/in.png" alt="linkedin"></a>
+                    rel="noopener noreferrer"><img src="img/in.png" alt="LinkedIn"></a>
             </div>
             <div class="circulo">
                 <a href="https://www.youtube.com/channel/UCKxd7Km4cMTMe4U3UK3XHNw" target="_blank"
-                    rel="noopener noreferrer"><img src="img/yt.png" alt="youtube"></a>
+                    rel="noopener noreferrer"><img src="img/yt.png" alt="YouTube"></a>
             </div>
             <div class="circulo">
-                <a href="https://api.whatsapp.com/send?phone=54+9+11+6608+6090&text=hola+como+estas" target="_blank"
-                    rel="noopener noreferrer"><img src="img/wp.png" alt="whatsapp"></a>
+                <a href="https://api.whatsapp.com/send?phone=5491166086090&amp;text=hola%20como%20estas"
+                    target="_blank" rel="noopener noreferrer"><img src="img/wp.png" alt="WhatsApp"></a>
             </div>
             <div class="circulo">
-                <a href="mailto:magali_baldovino@hotmail.com"><img src="img/mail.png" alt="mail"></a>
+                <a href="mailto:magali_baldovino@hotmail.com"><img src="img/mail.png" alt="Correo electrónico"></a>
             </div>
         </div>
     </main>
-
-    <section id="locucion" class="jobs">
-        <div class="container mt-5">
-            <h2 class="text-center mb-4">Locución</h2>
-
-            <div class="row">
-
-                <!-- Columna para la presentación -->
-                <div class="col-md-6">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel delectus numquam pariatur nulla,
-                        deleniti ipsam, excepturi doloribus, illo saepe accusantium libero iure eligendi omnis eum quasi
-                        dignissimos id culpa et.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione omnis soluta fuga aut adipisci
-                        ducimus itaque sapiente laboriosam, nesciunt pariatur ut. Laudantium natus assumenda maiores
-                        reprehenderit, tempore excepturi saepe tempora!</p>
-
-                    <h3>Ver mas...</h3>
-                </div>
-
-                <!-- Columna para el Carousel -->
-                <div class="col-md-6">
-                    <!-- Carousel -->
-                    <div id="videoCarousellocucion" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <!-- Video 1 -->
-                            <div class="carousel-item active">
-                                <iframe width="100%" height="315"
-                                    src="https://www.youtube.com/embed/uFzL8KTRZ7I?si=SrTcxHDvE2zRuu0-" frameborder="0"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <!-- Video 2 -->
-                            <div class="carousel-item">
-                                <iframe width="100%" height="315"
-                                    src="https://www.youtube.com/embed/rJqmMT5ljn8?si=KXyNz-7Ek8jCEtmw" frameborder="0"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <!-- Agrega más elementos carousel-item según sea necesario -->
-
-                        </div>
-
-                        <!-- Controles del Carousel -->
-                        <a class="carousel-control-prev" href="#videoCarousellocucion" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Anterior</span>
-                        </a>
-                        <a class="carousel-control-next" href="#videoCarousellocucion" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Siguiente</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="actriz" class="jobs">
-        <div class="container mt-5">
-            <h2 class="text-center mb-4">Actriz</h2>
-
-            <div class="row">
-
-                <!-- Columna para la presentación -->
-                <div class="col-md-6">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel delectus numquam pariatur nulla,
-                        deleniti ipsam, excepturi doloribus, illo saepe accusantium libero iure eligendi omnis eum quasi
-                        dignissimos id culpa et.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione omnis soluta fuga aut adipisci
-                        ducimus itaque sapiente laboriosam, nesciunt pariatur ut. Laudantium natus assumenda maiores
-                        reprehenderit, tempore excepturi saepe tempora!</p>
-
-                    <h3>Ver mas...</h3>
-                </div>
-
-                <!-- Columna para el Carousel -->
-                <div class="col-md-6">
-                    <!-- Carousel -->
-                    <div id="videoCarouselactriz" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <!-- Video 1 -->
-                            <div class="carousel-item active">
-                                <iframe width="100%" height="315"
-                                    src="https://www.youtube.com/embed/uFzL8KTRZ7I?si=SrTcxHDvE2zRuu0-" frameborder="0"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <!-- Video 2 -->
-                            <div class="carousel-item">
-                                <iframe width="100%" height="315"
-                                    src="https://www.youtube.com/embed/rJqmMT5ljn8?si=KXyNz-7Ek8jCEtmw" frameborder="0"
-                                    allowfullscreen></iframe>
-                            </div>
-                            <!-- Agrega más elementos carousel-item según sea necesario -->
-
-                        </div>
-
-                        <!-- Controles del Carousel -->
-                        <a class="carousel-control-prev" href="#videoCarouselactriz" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Anterior</span>
-                        </a>
-                        <a class="carousel-control-next" href="#videoCarouselactriz" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Siguiente</span>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    
-
 
     <script src="js/cod.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.js"
-        integrity="sha512-Kxd7ZcHvu2pUya3op2MKuD5Zmmad9B8xU2ze6pN4POLlXWihMRjzgPFp/V3jW4EpzSKBZ3r5WfNUbZxiD0ZiAw=="
+        integrity="sha512-Kxd7ZcHvu2pUya3op2MKu5Zmmad9B8xU2ze6pN4POLlXWihMRjzgPFp/V3jW4EpzSKBZ3r5WfNUbZxiD0ZiAw=="
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
         integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
